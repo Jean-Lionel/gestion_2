@@ -77,6 +77,14 @@
                    ) ?>
                </li>
 
+               <li>
+                   <?php echo $this->Html->link('retraites'.
+                   $this->Html->image("icon/mise.png")
+                   ,['controller'=>'employes','action'=>'retraites'],
+                   ["escape" => false]
+                   ) ?>
+               </li>
+
 
                <li>
                    <?php echo $this->Html->link('Mise à pied'.

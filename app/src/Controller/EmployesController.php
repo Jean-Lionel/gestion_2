@@ -2,6 +2,7 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+use Cake\Datasource\ConnectionManager;
 
 /**
  * Employes Controller
@@ -176,6 +177,33 @@ class EmployesController extends AppController
 
 
       $this->set(compact('employes'));
+
+    }
+
+
+
+    public function retraites(){
+
+       $connection = ConnectionManager::get('default');
+        
+
+       $employesData = $connection->execute('select matricule,nom,prenom,dateNaissance From employes')->fetchAll('assoc');
+
+       $employes = [];
+
+       foreach ($employesData as $key => $value) {
+          $infoRetraites = $this->Myfonction->nbreAge($value['dateNaissance']);
+
+          $employe = $value;
+          $employe['nbresAnne'] = $infoRetraites[0];
+          $employe['anneeRestant'] = $infoRetraites[1];
+
+          $employes[] = $employe;
+       }
+
+       $employes = (object)  $employes;
+       
+        $this->set(compact('employes'));
 
     }
 }

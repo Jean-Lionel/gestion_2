@@ -131,7 +131,15 @@
                         ['escape'=> false]
                  ) ?>
                 </li>
-              
+
+                 <li>
+                   <?php echo $this->Html->link('retraites'.
+                   $this->Html->image("icon/mise.png")
+                   ,['controller'=>'employes','action'=>'retraites'],
+                   ["escape" => false]
+                   ) ?>
+               </li>
+
                 <li>
                      <?php echo $this->Html->link('Annexes'.
                         $this->Html->image('icon/library.png')
@@ -141,7 +149,7 @@
                 </li>
                 <li>
                      <?php echo $this->Html->link('Utilisateurs'.
-                        $this->Html->image('icon/library.png')
+                        $this->Html->image('icon/user.png')
                         ,['controller'=>'users','action'=>'index'],
                         ['escape'=> false]
                  ) ?>

@@ -329,7 +329,7 @@ function calculer_ipr($base_ipr){
 
 function calcule_epargne($matricule, $periode){
 
-    // SELECT * FROM `avances` WHERE `date_fin` >= '2020-01-01' AND `date_avance`>='2020-01-01' AND matricule = 29
+    // SELECT * FROM `epargnes` WHERE `date_fin` >= '2020-01-01' AND `date_avance`>='2020-01-01' AND matricule = 29
     $db = connexion();
 
     $q = 'SELECT SUM(montant) as epargnes_total
@@ -369,7 +369,7 @@ function calcule_avances($matricule, $periode){
  $q = "
  SELECT SUM(montant_Moi) as montant_moi
  FROM avances
- `avances` WHERE `date_fin` > '".$dateActuel."' AND `date_avance` <= '".$dateActuel."'
+ `avances` WHERE `date_fin` >= '".$dateActuel."' AND `date_avance` <= '".$dateActuel."'
 
 
   AND matricule = ".$matricule;
@@ -403,7 +403,7 @@ function calcule_credit($matricule, $periode){
  $q = "
  SELECT SUM(montant_Moi) as montant_moi
  FROM credits
- `avances` WHERE `date_fin` > '".$dateActuel."' AND `date_credit`<='".$dateActuel."' AND matricule = ".$matricule;
+ `avances` WHERE `date_fin` >= '".$dateActuel."' AND `date_credit`<='".$dateActuel."' AND matricule = ".$matricule;
 
   // var_dump($q);
   // die();
@@ -719,7 +719,7 @@ function get_retenu_credits($matricule , $periode){
  $db = connexion();
 
  $q = "SELECT SUM(montant_Moi) as montant_total, variable_id FROM credits WHERE 
- matricule =". $matricule." AND date_fin > '".$dateActuel."' AND date_credit <= '".$dateActuel."' GROUP BY variable_id";
+ matricule =". $matricule." AND date_fin >= '".$dateActuel."' AND date_credit <= '".$dateActuel."' GROUP BY variable_id";
 
  $request = $db->query($q);
 
@@ -737,7 +737,7 @@ function get_retenu_avances($matricule , $periode){
  $db = connexion();
 
  $q = "SELECT SUM(montant_moi) as montant_total, variable_id FROM avances WHERE 
- matricule =". $matricule." AND date_fin > '".$dateActuel."' AND date_avance <= '".$dateActuel."' GROUP BY variable_id";
+ matricule =". $matricule." AND date_fin >= '".$dateActuel."' AND date_avance <= '".$dateActuel."' GROUP BY variable_id";
 
  $request = $db->query($q);
 

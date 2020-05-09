@@ -29,6 +29,18 @@ class MyfonctionComponent extends Component
 		return $amount1 + $amount2;
 	}
 
+	public function nbreAge($dateNaissance){
+		$datetime1 = date_create($dateNaissance);
+		$datetime2 = date_create(date("Y-m-d"));
+		$interval = date_diff($datetime1, $datetime2);
+
+		$infoComplet = $interval->format('%r%y  ans - %M mois  - %D jours');
+
+		$annerestant = 60 - $interval->format('%r%y');
+
+		return [$infoComplet, $annerestant];
+	}
+
 
 	
 	  // echo $this->Form->control('role',['options'=>['','ADMIN'=>'ADMIN','CHEF DE SERVICE R.H'=>'CHEF DE SERVICE R.H','TRAITANT DU SALAIRE' => 'TRAITANT DU SALAIRE','TRAITANT DE R.H'=>'TRAITANT DE R.H']]);
