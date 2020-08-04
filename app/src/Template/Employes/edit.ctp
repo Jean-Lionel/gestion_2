@@ -7,8 +7,8 @@
 <nav class="large-2 medium-2 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?=__('Actions')?></li>
-        <li><?=$this->Html->link(__('List Employes'), ['action' => 'index'])?></li>
-        <li><?=$this->Html->link(__('List Levels'), ['controller' => 'Levels', 'action' => 'index'])?></li>
+        <li><?=$this->Html->link(__('Liste des Employes'), ['action' => 'index'])?></li>
+        <!-- <li><?=$this->Html->link(__('List Levels'), ['controller' => 'Levels', 'action' => 'index'])?></li>
         <li><?=$this->Html->link(__('New Level'), ['controller' => 'Levels', 'action' => 'add'])?></li>
         <li><?=$this->Html->link(__('List Agences'), ['controller' => 'Agences', 'action' => 'index'])?></li>
         <li><?=$this->Html->link(__('New Agence'), ['controller' => 'Agences', 'action' => 'add'])?></li>
@@ -21,7 +21,7 @@
         <li><?=$this->Html->link(__('List Banques'), ['controller' => 'Banques', 'action' => 'index'])?></li>
         <li><?=$this->Html->link(__('New Banque'), ['controller' => 'Banques', 'action' => 'add'])?></li>
         <li><?=$this->Html->link(__('List Cotations'), ['controller' => 'Cotations', 'action' => 'index'])?></li>
-        <li><?=$this->Html->link(__('New Cotation'), ['controller' => 'Cotations', 'action' => 'add'])?></li>
+        <li><?=$this->Html->link(__('New Cotation'), ['controller' => 'Cotations', 'action' => 'add'])?></li> -->
     </ul>
 </nav>
 <div class="employes form large-10 medium-10 columns content">

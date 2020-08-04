@@ -48,7 +48,7 @@ class AppController extends Controller
             ],
             'unauthorizedRedirect' => $this->referer()
         ]);
-        
+       
         $layout = $this->Myfonction->renderLayout($this->Auth->user('role'));
 
         $this->layout =  $layout;

@@ -21,6 +21,8 @@ class EmployesController extends AppController
     public function index()
     {
 
+        
+
         $keyWord = $this->request->query('keyWord');
         $champ = $this->request->query('champ');
 

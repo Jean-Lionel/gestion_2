@@ -109,7 +109,9 @@ ob_start();
 
 		<td colspan="4" class="noborder" style="border-bottom: none;">TOTAL</td>
 
-		<td><?= afficheNombre(count_sum_colonne_table($employesData, 'base_pension_employeur')) ?></td>
+
+
+		<td><?= afficheNombre(count_sum_colonne_table($employesData, 'base_pension_employeur') + 47790);//47410 ?></td>
 		
 		<td><?= afficheNombre(count_sum_colonne_table($employesData, 'base_risque_employeur')) ?></td>
 	
@@ -123,8 +125,8 @@ ob_start();
 		<tr>
 			<td style="width: 45%">
 
-				<p>LE DIRECTEUR ADMINISTRATIF ET FINANCIER</p>
-				<p>MANIRAKIZA Francine</p>
+				<p>LE DIRECTEUR ADMINISTRATIF ET FINANCIER a.i</p>
+				<p>BIGIRIMANA Aline</p>
 				
 			</td>
 

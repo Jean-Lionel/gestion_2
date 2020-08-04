@@ -85,7 +85,7 @@ class VariablesTable extends Table
     if(isset($options['default']) && $options['default'] == false){
         return $query;
     }
-    $query->where(['Variables.name NOT LIKE' => '%kcb%']);
+    // $query->where(['Variables.name NOT LIKE' => '%kcb%']);
     $query->order(['Variables.name' => 'ASC']);
 
     return $query;

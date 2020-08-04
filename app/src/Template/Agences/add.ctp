@@ -7,9 +7,9 @@
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('List Agences'), ['action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('List Employes'), ['controller' => 'Employes', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Employe'), ['controller' => 'Employes', 'action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('Liste des agences'), ['action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('listes des Employes'), ['controller' => 'Employes', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('Nouvel employe'), ['controller' => 'Employes', 'action' => 'add']) ?></li>
     </ul>
 </nav>
 <div class="agences form large-9 medium-8 columns content">

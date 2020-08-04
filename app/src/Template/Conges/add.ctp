@@ -13,13 +13,13 @@
 <div class="conges form large-9 medium-8 columns content">
     <?= $this->Form->create($conge) ?>
     <fieldset>
-        <legend><?= __('Add Conge') ?></legend>
+        <legend><?= __('Ajouter un congée') ?></legend>
         <?php
             echo $this->Form->control('name');
             echo $this->Form->control('nbre_jour');
-            echo $this->Form->control('etat');
+       
         ?>
     </fieldset>
-    <?= $this->Form->button(__('Submit')) ?>
+    <?= $this->Form->button(__('Enregistré')) ?>
     <?= $this->Form->end() ?>
 </div>

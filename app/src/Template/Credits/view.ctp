@@ -8,7 +8,7 @@
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Html->link(__('Edit Credit'), ['action' => 'edit', $credit->id]) ?> </li>
-        <li><?= $this->Form->postLink(__('Delete Credit'), ['action' => 'delete', $credit->id], ['confirm' => __('Are you sure you want to delete # {0}?', $credit->id)]) ?> </li>
+        <li><?= $this->Form->postLink(__('Efface le credit'), ['action' => 'delete', $credit->id], ['confirm' => __('Are you sure you want to delete # {0}?', $credit->id)]) ?> </li>
         <li><?= $this->Html->link(__('List Credits'), ['action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New Credit'), ['action' => 'add']) ?> </li>
         <li><?= $this->Html->link(__('List Variables'), ['controller' => 'Variables', 'action' => 'index']) ?> </li>

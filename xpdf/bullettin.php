@@ -6,6 +6,12 @@ $matricule = $_GET['matricule'];
 
 $employe =  find_employe_by_matricule($employes, $matricule);
 
+// echo "<pre>";
+// var_dump($employe);
+// echo "</pre>";
+
+// die();
+
 if($employe == null){
 	header('Location: ../app/menus');
 	exit();
@@ -89,6 +95,16 @@ ob_start();
 					<?= $employe['logement']?>
 				</td>
 
+			</tr>
+
+			<tr>
+				<td>Ind. Adjustement</td>
+				<td> <?= $employe['ind_ajustement'] ?></td>
+			</tr>
+
+			<tr>
+				<td>Prime de fonction</td>
+				<td> <?= $employe['prime_Fonction'] ?></td>
 			</tr>
 
 			<tr>

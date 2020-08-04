@@ -20,7 +20,6 @@
                 <th scope="col"><?= $this->Paginator->sort('nbre_jour') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('created') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('modified') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('etat') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
         </thead>
@@ -32,7 +31,6 @@
                 <td><?= $this->Number->format($conge->nbre_jour) ?></td>
                 <td><?= h($conge->created) ?></td>
                 <td><?= h($conge->modified) ?></td>
-                <td><?= $this->Number->format($conge->etat) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $conge->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $conge->id]) ?>

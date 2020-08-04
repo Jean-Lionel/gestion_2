@@ -62,10 +62,7 @@ class CongesTable extends Table
             ->requirePresence('nbre_jour', 'create')
             ->notEmptyString('nbre_jour');
 
-        $validator
-            ->integer('etat')
-            ->requirePresence('etat', 'create')
-            ->notEmptyString('etat');
+ 
 
         return $validator;
     }

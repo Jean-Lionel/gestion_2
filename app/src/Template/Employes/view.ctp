@@ -10,7 +10,7 @@
         <li><?= $this->Html->link(__('Edit Employe'), ['action' => 'edit', $employe->id]) ?> </li>
         <li><?= $this->Form->postLink(__('Delete Employe'), ['action' => 'delete', $employe->id], ['confirm' => __('Are you sure you want to delete # {0}?', $employe->id)]) ?> </li>
         <li><?= $this->Html->link(__('List Employes'), ['action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Employe'), ['action' => 'add']) ?> </li>
+        <!-- <li><?= $this->Html->link(__('New Employe'), ['action' => 'add']) ?> </li>
         <li><?= $this->Html->link(__('List Levels'), ['controller' => 'Levels', 'action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New Level'), ['controller' => 'Levels', 'action' => 'add']) ?> </li>
         <li><?= $this->Html->link(__('List Agences'), ['controller' => 'Agences', 'action' => 'index']) ?> </li>
@@ -24,7 +24,7 @@
         <li><?= $this->Html->link(__('List Banques'), ['controller' => 'Banques', 'action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New Banque'), ['controller' => 'Banques', 'action' => 'add']) ?> </li>
         <li><?= $this->Html->link(__('List Cotations'), ['controller' => 'Cotations', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Cotation'), ['controller' => 'Cotations', 'action' => 'add']) ?> </li>
+        <li><?= $this->Html->link(__('New Cotation'), ['controller' => 'Cotations', 'action' => 'add']) ?> </li> -->
     </ul>
 </nav>
 <div class="employes view large-9 medium-8 columns content">

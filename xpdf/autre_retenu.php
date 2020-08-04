@@ -61,6 +61,8 @@ ob_start();
 
 <?php foreach ($autres_retenues as $key => $ordreVirementBanque):  ?>
 
+	<?php //Check value checkValue([0]['variable_name']) ?>
+
 	<?php if(!checkValue($ordreVirementBanque[0]['variable_name'])): ?>
 	<page backtop="0mm" backleft="5mm" backbottom="10mm" backright="5mm" footer="page">
 		

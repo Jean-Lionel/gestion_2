@@ -10,12 +10,13 @@
         <li><?= $this->Form->postLink(
                 __('Delete'),
                 ['action' => 'delete', $agence->id],
-                ['confirm' => __('Are you sure you want to delete # {0}?', $agence->id)]
+                ['confirm' => __('Etez-vous sur de supprimer# {0}?', $agence->name)]
             )
         ?></li>
-        <li><?= $this->Html->link(__('List Agences'), ['action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('List Employes'), ['controller' => 'Employes', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Employe'), ['controller' => 'Employes', 'action' => 'add']) ?></li>
+        <li class="heading"><?= __('Actions') ?></li>
+        <li><?= $this->Html->link(__('Liste des agences'), ['action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('listes des Employes'), ['controller' => 'Employes', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('Nouvel employe'), ['controller' => 'Employes', 'action' => 'add']) ?></li>
     </ul>
 </nav>
 <div class="agences form large-9 medium-8 columns content">

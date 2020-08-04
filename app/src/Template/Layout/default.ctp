@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -139,6 +140,16 @@
                    ["escape" => false]
                    ) ?>
                </li>
+
+                <li>
+                     <?php echo $this->Html->link('congé'.
+                        $this->Html->image('icon/library.png')
+                        ,['controller'=>'EmployesConges','action'=>'index'],
+                        ['escape'=> false]
+                 ) ?>
+                </li>
+
+
 
                 <li>
                      <?php echo $this->Html->link('Annexes'.
