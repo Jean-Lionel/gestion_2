@@ -7,11 +7,11 @@
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('New Conge'), ['action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('Nouvel Conge'), ['action' => 'add']) ?></li>
     </ul>
 </nav>
 <div class="conges index large-9 medium-8 columns content">
-    <h3><?= __('Conges') ?></h3>
+    <h3><?= __('Liste des conges') ?></h3>
     <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>
@@ -32,9 +32,9 @@
                 <td><?= h($conge->created) ?></td>
                 <td><?= h($conge->modified) ?></td>
                 <td class="actions">
-                    <?= $this->Html->link(__('View'), ['action' => 'view', $conge->id]) ?>
-                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $conge->id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $conge->id], ['confirm' => __('Are you sure you want to delete # {0}?', $conge->id)]) ?>
+                    <?= $this->Html->link(__('Afficher'), ['action' => 'view', $conge->id]) ?>
+                    <?= $this->Html->link(__('Modifier'), ['action' => 'edit', $conge->id]) ?>
+                    <?= $this->Form->postLink(__('Supprimer'), ['action' => 'delete', $conge->id], ['confirm' => __('Are you sure you want to delete # {0}?', $conge->id)]) ?>
                 </td>
             </tr>
             <?php endforeach; ?>

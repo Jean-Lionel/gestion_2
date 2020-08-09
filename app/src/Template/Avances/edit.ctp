@@ -13,9 +13,9 @@
                 ['confirm' => __('Are you sure you want to delete # {0}?', $avance->id)]
             )
         ?></li>
-        <li><?= $this->Html->link(__('List Avances'), ['action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('List Variables'), ['controller' => 'Variables', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Variable'), ['controller' => 'Variables', 'action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('Listes des Avances'), ['action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('Listes des Variables'), ['controller' => 'Variables', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('Nouvel Variable'), ['controller' => 'Variables', 'action' => 'add']) ?></li>
     </ul>
 </nav>
 <div class="avances form large-9 medium-8 columns content">

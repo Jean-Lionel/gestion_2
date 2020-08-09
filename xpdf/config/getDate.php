@@ -1,6 +1,8 @@
 <?php
 
-$periodeGet =['annee'=>date('Y'),'mois'=>date('m')];
+$current_date   = ['annee'=>date('Y'),'mois'=>date('m')];
+
+$periodeGet = $current_date;
 
 
 if(isset($_GET['y'])){
@@ -10,5 +12,11 @@ if(isset($_GET['y'])){
 }
 
 }
+
+
+//La variable pour avoir la date d'aujourd'hui
+
+
+
 
 

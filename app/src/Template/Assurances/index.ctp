@@ -7,11 +7,11 @@
 <nav class="large-2 medium-2 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('New Assurance'), ['action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Variables'), ['controller' => 'Variables', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Variable'), ['controller' => 'Variables', 'action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Fonctions'), ['controller' => 'Fonctions', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Fonction'), ['controller' => 'Fonctions', 'action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('Nouvel Assurance'), ['action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('Listes des  Variables'), ['controller' => 'Variables', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('Nouvel Variable'), ['controller' => 'Variables', 'action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('Listes des  Fonctions'), ['controller' => 'Fonctions', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('Nouvel Fonction'), ['controller' => 'Fonctions', 'action' => 'add']) ?></li>
     </ul>
 </nav>
 <div class="assurances index large-10 medium-10 columns content">
@@ -43,9 +43,9 @@
                 <td><?= $this->Number->format($assurance->montant) ?></td>
                 <td><?= h($assurance->periode) ?></td>
                 <td class="actions">
-                    <?= $this->Html->link(__('View'), ['action' => 'view', $assurance->id]) ?>
-                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $assurance->id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $assurance->id], ['confirm' => __('Are you sure you want to delete # {0}?', $assurance->id)]) ?>
+                    <?= $this->Html->link(__('Afficher'), ['action' => 'view', $assurance->id]) ?>
+                    <?= $this->Html->link(__('Modifier'), ['action' => 'edit', $assurance->id]) ?>
+                    <?= $this->Form->postLink(__('Supprimer'), ['action' => 'delete', $assurance->id], ['confirm' => __('Are you sure you want to delete # {0}?', $assurance->id)]) ?>
                 </td>
             </tr>
             <?php endforeach; ?>

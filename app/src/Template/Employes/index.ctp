@@ -68,6 +68,8 @@
             <th scope="col"><?= $this->Paginator->sort('nom') ?></th>
             <th scope="col"><?= $this->Paginator->sort('prenom') ?></th>
             <th scope="col"><?= $this->Paginator->sort('dateNaissance','Date de naissance') ?></th>
+          
+            
               <!--  
                 <th scope="col"><?= $this->Paginator->sort('sexe') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('etatCivil') ?></th>
@@ -90,7 +92,7 @@
                  <th scope="col"><?= $this->Paginator->sort('etat') ?></th>
                  !-->
 
-                 <th scope="col" class="actions"><?= __('Actions') ?></th>
+                 <th scope="col" class="actions" colspan="3"><?= __('Actions') ?></th>
              </tr>
          </thead>
          <tbody>
@@ -123,21 +125,37 @@
                 <td><?= $this->Number->format($employe->etat) ?></td>
 
                 !-->
-                <td class="actions">
+                <td class="actions" colspan="3">
 
-                    <?= $this->Html->link($this->Html->image('icon/view.png'), ['action' => 'view', $employe->id],['escape'=>false]) ?>
-                    <?= $this->Html->link($this->Html->image('icon/edit.png'), ['action' => 'edit', $employe->id],['escape'=>false]) ?>
+                    <style>
+                        .actions a
+                        {
+                            padding: 10px;
+                        }
 
-                    <?= $this->Form->postLink($this->Html->image('icon/delete.png'), ['action' => 'delete', $employe->id], ['confirm' => __('Are you sure you want to delete # {0}?', $employe->id),'escape'=>false])
+                        .actions a:hover
+                        {
+                            background: gold;
+                        }
+
+                         .actions img{
+                            margin-right: 3px;
+                         }
+                    </style>
+
+                    <?= $this->Html->link($this->Html->image('icon/view.png').'Afficher', ['action' => 'view', $employe->id],['escape'=>false]) ?>
+                    <?= $this->Html->link($this->Html->image('icon/edit.png').'Modifier', ['action' => 'edit', $employe->id],['escape'=>false]) ?>
+
+                    <?= $this->Form->postLink($this->Html->image('icon/delete.png').'Supprimer', ['action' => 'delete', $employe->id], ['confirm' => __('Are you sure you want to delete # {0}?', $employe->id),'escape'=>false])
                      ?>
 
                     <?php
                     $message = "";
                     if($employe->etat == 0){
-                        $message = $this->Html->image('icon/add.png');
+                        $message = $this->Html->image('icon/add.png').'Active';
                         
                     }else{
-                       $message = $this->Html->image('icon/desable.png'); 
+                       $message = $this->Html->image('icon/desable.png').'Desactive'; 
                     }
 
                     echo   $this->Form->postLink(__( $message), ['action' => 'desable', $employe->id], ['confirm' => __('êtes-vous sur de desactive # {0}?', $employe->id),'escape'=>false]); 

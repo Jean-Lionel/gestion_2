@@ -13,15 +13,15 @@
                 ['confirm' => __('Are you sure you want to delete # {0}?', $level->id)]
             )
         ?></li>
-        <li><?= $this->Html->link(__('List Levels'), ['action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('List Employes'), ['controller' => 'Employes', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Employe'), ['controller' => 'Employes', 'action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('Listes des Niveaux'), ['action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('Listes des Employes'), ['controller' => 'Employes', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('Nouvel Employe'), ['controller' => 'Employes', 'action' => 'add']) ?></li>
     </ul>
 </nav>
 <div class="levels form large-9 medium-8 columns content">
     <?= $this->Form->create($level) ?>
     <fieldset>
-        <legend><?= __('Edit Level') ?></legend>
+        <legend><?= __('Modifier Level') ?></legend>
         <?php
             echo $this->Form->control('name');
             echo $this->Form->control('base_salary');

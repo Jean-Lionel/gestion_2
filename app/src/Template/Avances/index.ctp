@@ -7,9 +7,9 @@
 <nav class="large-2 medium-2 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('New Avance'), ['action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Variables'), ['controller' => 'Variables', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Variable'), ['controller' => 'Variables', 'action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('Nouvel Avance'), ['action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('Listes des Variables'), ['controller' => 'Variables', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('Nouvel Variable'), ['controller' => 'Variables', 'action' => 'add']) ?></li>
     </ul>
 </nav>
 <div class="avances index large-10 medium-10 columns content">
@@ -51,9 +51,9 @@
                 <td><?= h($avance->date_avance) ?></td>
                 <td><?= h($avance->date_fin) ?></td>
                 <td class="actions">
-                    <?= $this->Html->link(__('View'), ['action' => 'view', $avance->id]) ?>
-                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $avance->id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $avance->id], ['confirm' => __('Are you sure you want to delete # {0}?', $avance->id)]) ?>
+                    <?= $this->Html->link(__('Afficher'), ['action' => 'view', $avance->id]) ?>
+                    <?= $this->Html->link(__('Modifier'), ['action' => 'edit', $avance->id]) ?>
+                    <?= $this->Form->postLink(__('Supprimer'), ['action' => 'delete', $avance->id], ['confirm' => __('Are you sure you want to delete # {0}?', $avance->id)]) ?>
                 </td>
             </tr>
             <?php endforeach; ?>

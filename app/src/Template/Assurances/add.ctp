@@ -7,11 +7,11 @@
 <nav class="large-2 medium-3 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('List Assurances'), ['action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('List Variables'), ['controller' => 'Variables', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Variable'), ['controller' => 'Variables', 'action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Fonctions'), ['controller' => 'Fonctions', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Fonction'), ['controller' => 'Fonctions', 'action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('Listes des Assurances'), ['action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('Listes des Variables'), ['controller' => 'Variables', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('Nouvel Variable'), ['controller' => 'Variables', 'action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('Listes des Fonctions'), ['controller' => 'Fonctions', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('Nouvel Fonction'), ['controller' => 'Fonctions', 'action' => 'add']) ?></li>
     </ul>
 </nav>
 <div class="assurances form large-10 medium-9 columns content">

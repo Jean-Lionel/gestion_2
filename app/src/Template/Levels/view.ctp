@@ -7,12 +7,12 @@
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('Edit Level'), ['action' => 'edit', $level->id]) ?> </li>
-        <li><?= $this->Form->postLink(__('Delete Level'), ['action' => 'delete', $level->id], ['confirm' => __('Are you sure you want to delete # {0}?', $level->id)]) ?> </li>
-        <li><?= $this->Html->link(__('List Levels'), ['action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Level'), ['action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Employes'), ['controller' => 'Employes', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Employe'), ['controller' => 'Employes', 'action' => 'add']) ?> </li>
+        <li><?= $this->Html->link(__('Modifier Niveau'), ['action' => 'edit', $level->id]) ?> </li>
+        <li><?= $this->Form->postLink(__('Supprimer Niveau'), ['action' => 'delete', $level->id], ['confirm' => __('Voulez vous vraiment supprimer # {0}?', $level->id)]) ?> </li>
+        <li><?= $this->Html->link(__('Listes des Niveaux'), ['action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('Nouveau Niveau'), ['action' => 'add']) ?> </li>
+        <li><?= $this->Html->link(__('Listes des Employes'), ['controller' => 'Employes', 'action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('Nouveau Employe'), ['controller' => 'Employes', 'action' => 'add']) ?> </li>
     </ul>
 </nav>
 <div class="levels view large-9 medium-8 columns content">

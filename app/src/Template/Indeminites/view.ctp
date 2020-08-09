@@ -7,14 +7,14 @@
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('Edit Indeminite'), ['action' => 'edit', $indeminite->id]) ?> </li>
-        <li><?= $this->Form->postLink(__('Delete Indeminite'), ['action' => 'delete', $indeminite->id], ['confirm' => __('Are you sure you want to delete # {0}?', $indeminite->id)]) ?> </li>
-        <li><?= $this->Html->link(__('List Indeminites'), ['action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Indeminite'), ['action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Ajustements'), ['controller' => 'Ajustements', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Ajustement'), ['controller' => 'Ajustements', 'action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Fonctions'), ['controller' => 'Fonctions', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Fonction'), ['controller' => 'Fonctions', 'action' => 'add']) ?> </li>
+        <li><?= $this->Html->link(__('MOdifier Indeminite'), ['action' => 'edit', $indeminite->id]) ?> </li>
+        <li><?= $this->Form->postLink(__('Supprimer Indeminite'), ['action' => 'delete', $indeminite->id], ['confirm' => __('Are you sure you want to delete # {0}?', $indeminite->id)]) ?> </li>
+        <li><?= $this->Html->link(__('Listes des Indeminites'), ['action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('Nouvel Indeminite'), ['action' => 'add']) ?> </li>
+        <li><?= $this->Html->link(__('Listes des  Ajustements'), ['controller' => 'Ajustements', 'action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('Nouvel Ajustement'), ['controller' => 'Ajustements', 'action' => 'add']) ?> </li>
+        <li><?= $this->Html->link(__('Listes des  Fonctions'), ['controller' => 'Fonctions', 'action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('Nouvel Fonction'), ['controller' => 'Fonctions', 'action' => 'add']) ?> </li>
     </ul>
 </nav>
 <div class="indeminites view large-9 medium-8 columns content">

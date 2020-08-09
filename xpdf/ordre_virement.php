@@ -1,8 +1,21 @@
 <?php
+//header('Content-type:application/json');
 require_once('./config/getDate.php');
 require_once('./config/calcule.php');
+require_once('./config/history_function.php');
 
-$resultat = ordreVirement($employes);
+
+if($periodeGet == $current_date)
+{
+    $resultat = ordreVirement($employes);
+	save_or_update_ordre_virement($resultat);
+
+}else{
+    $resultat =  get_historique_from('history_ordre_virement', $periodeGet);
+}
+
+
+
 
 
 
@@ -80,7 +93,7 @@ ob_start();
 
 	<?php require("include/header_portrait.php");?>
 
-	<p class="title">ORDRE DE VIREMENT DES SALAIRES: <?= $ordreVirementBanque[0]['periode']['mois'] .' / ' .$ordreVirementBanque[0]['periode']['annee'] ?></p>
+	<p class="title">ORDRE DE VIREMENT DES SALAIRES: <?= $periodeGet['mois'] .' / ' .$periodeGet['annee'] ?></p>
 	
 		<h4>BANQUE : <?= strtoupper($ordreVirementBanque[0]['banque_name'])?></h4>
 

@@ -1,5 +1,5 @@
 <?php
-
+//header('Content-type: application/json');
 require_once('./config/getDate.php');
 require_once('./config/calcule.php');
 $trimestre = intval($_GET['m']);
@@ -9,7 +9,32 @@ if(!in_array($trimestre, [1,4,7,10])){
 	die('Erreur vos donnés sont incorrect');
 }
 
-$employesData = iness_trimestrielle($employes, $trimestre);
+
+// algorithime permettant de verifier est compris entre 2 nombres a et b 
+
+// Si c'est l'annee en cours et que c'est le trimestre encours
+// TRIMESSTRE + 2
+// if a>=x AND x<= b
+
+
+
+if(date('Y') == $annee && ( date('m') >= $trimestre && date('m') <=($trimestre + 2))  )
+{
+	$employesData = iness_trimestrielle($annee ,$trimestre);
+
+	save_or_update_iness_trimestrielle($employesData);
+
+}else{
+	$employesData =  get_historique_from('history_inss_trimistrielle', $periodeGet);
+}
+
+
+
+
+
+// echo json_encode( $employesData[0]);
+
+// die();
 
 function formatTrimestre($trim){
 	$trim_list = [0,1,4,7,10];
@@ -111,7 +136,7 @@ ob_start();
 
 
 
-		<td><?= afficheNombre(count_sum_colonne_table($employesData, 'base_pension_employeur') + 47790);//47410 ?></td>
+		<td><?= afficheNombre(count_sum_colonne_table($employesData, 'base_pension_employeur') );//+47790 ?></td>
 		
 		<td><?= afficheNombre(count_sum_colonne_table($employesData, 'base_risque_employeur')) ?></td>
 	

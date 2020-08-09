@@ -30,15 +30,21 @@ function getEmployesData($periode = null){
     }
     $employesData->closeCursor();
 
-    $check = 'SELECT  IF(count(*)>1 , 0, 1)as val FROM `employes_history` WHERE MONTH(`created`)= '.$periode['mois'] .' AND YEAR(created) = '.$periode['annee'];
+    $check = 'SELECT  IF(count(*)>1 , 1, 0)as val FROM `employes_history` WHERE MONTH(`created`)= '.$periode['mois'] .' AND YEAR(created) = '.$periode['annee'];
     $db = connexion();
     $result = $db->query($check);
     $result_get = $result->fetch();
+    $result->closeCursor();
 
     if($result_get['val']){
-            //Enregistrement de l'historique c la premiere fois 
-        savehistory($employes);
+            //Enregistrement de l'historique c la premiere fois)
+      $query = 'DELETE FROM `employes_history` WHERE MONTH(`created`)= '.$periode['mois'] .' AND YEAR(created) = '.$periode['annee'];
+
+       $db->exec($query);
     }
+
+    savehistory($employes);
+
     return  $employes;
 }else if($periode > $currentDate){
     return null;
@@ -962,6 +968,8 @@ if(!empty($retenues_avances)){
 return $table_data;
 }
 
+//Function pour enregistre l'historique 
+
 
 //Function 
 
@@ -992,6 +1000,7 @@ function get_file_iness($employes){
        $employeData['montant_pension_employeur'] = round($value['inss_employe']);
        $employeData['base_risque_employeur'] = $value['base__risque_employeur'];
        $employeData['montant_risque_employeur'] = $value['montant_risque'];
+       $employeData['matricule_inss'] = $value['matricule_inss'];
 
 
        //Le total 
@@ -1035,55 +1044,78 @@ function getCompteNumber($str){
     return $matches[0];
 }
 
-function iness_trimestrielle($employes, $trimestre){
-    // SELECT matricule,COUNT(matricule) FROM `employes_history` WHERE MONTH(`created`) BETWEEN 0 AND 4 GROUP BY matricule
+// function iness_trimestrielle($employes, $trimestre){
+//     // SELECT matricule,COUNT(matricule) FROM `employes_history` WHERE MONTH(`created`) BETWEEN 0 AND 4 GROUP BY matricule
 
-    //J'additionne par deux trouver la limmiter du trimesstre
+//     //J'additionne par deux trouver la limmiter du trimesstre
 
-    $sql = "SELECT matricule,COUNT(matricule) as nbre_mois FROM `employes_history` WHERE MONTH(`created`) BETWEEN $trimestre AND $trimestre +2 GROUP BY matricule";
+//     $sql = "SELECT matricule,COUNT(matricule) as nbre_mois FROM `employes_history` WHERE MONTH(`created`) BETWEEN $trimestre AND $trimestre +2 GROUP BY matricule";
    
-    $db = connexion();
-    $val = $db->query($sql);
-    $nbre_mois_par_matricule = $val->fetchAll();
+//     $db = connexion();
+//     $val = $db->query($sql);
+//     $nbre_mois_par_matricule = $val->fetchAll();
   
-    $inssMensuell = get_file_iness($employes);
+//     $inssMensuell = get_file_iness($employes);
 
-    $employeData = [];
+//     $employeData = [];
 
 
 
-    foreach ($inssMensuell as $key => $value) {
+//     foreach ($inssMensuell as $key => $value) {
 
-        $employe = [];
-        $key = array_search($value['matricule'], array_column($nbre_mois_par_matricule, 'matricule'));
+//         $employe = [];
+//         $key = array_search($value['matricule'], array_column($nbre_mois_par_matricule, 'matricule'));
 
-        $nbre_mois = $nbre_mois_par_matricule[$key]['nbre_mois'];  
+//         $nbre_mois = $nbre_mois_par_matricule[$key]['nbre_mois'];  
 
-        $employe['base_pension_employe'] = $value['base_pension_employe']  *  $nbre_mois ;  
-        $employe['montant_pension_employe'] = $value['montant_pension_employe']  *  $nbre_mois ;  
-        $employe['base_risque_employe'] = $value['base_risque_employe']  *  $nbre_mois ;  
-        $employe['montant_risque_employe'] = $value['montant_risque_employe']  *  $nbre_mois ;  
+//         $employe['base_pension_employe'] = $value['base_pension_employe']  *  $nbre_mois ;  
+//         $employe['montant_pension_employe'] = $value['montant_pension_employe']  *  $nbre_mois ;  
+//         $employe['base_risque_employe'] = $value['base_risque_employe']  *  $nbre_mois ;  
+//         $employe['montant_risque_employe'] = $value['montant_risque_employe']  *  $nbre_mois ;  
 
-        //Part employeur
+//         //Part employeur
 
-       $employe['base_pension_employeur'] = $value['base_pension_employeur']  *  $nbre_mois ; 
-       $employe['montant_pension_employeur'] = $value['montant_pension_employeur']  *  $nbre_mois ; 
-       $employe['base_risque_employeur'] = $value['base_risque_employeur']  *  $nbre_mois ; 
-       $employe['montant_risque_employeur'] = $value['montant_risque_employeur']  *  $nbre_mois ; 
+//        $employe['base_pension_employeur'] = $value['base_pension_employeur']  *  $nbre_mois ; 
+//        $employe['montant_pension_employeur'] = $value['montant_pension_employeur']  *  $nbre_mois ; 
+//        $employe['base_risque_employeur'] = $value['base_risque_employeur']  *  $nbre_mois ; 
+//        $employe['montant_risque_employeur'] = $value['montant_risque_employeur']  *  $nbre_mois ; 
 
-       //Donne peronselle
+//        //Donne peronselle
 
-        $employe['total'] = $value['total']  *  $nbre_mois ;  
+//         $employe['total'] = $value['total']  *  $nbre_mois ;  
 
-        $employe['nom'] = $value['nom'];  
-        $employe['prenom'] = $value['prenom'];  
-        $employe['matricule_inss'] = $value['matricule_inss'];  
-        $employe['nbre_mois'] =  $nbre_mois ;  
+//         $employe['nom'] = $value['nom'];  
+//         $employe['prenom'] = $value['prenom'];  
+//         $employe['matricule_inss'] = $value['matricule_inss'];  
+//         $employe['nbre_mois'] =  $nbre_mois ;  
+//         $employe['periode'] =  $employes[0]['periode'] ;  
 
-        $employeData[] = $employe;
-    }
+//         $employeData[] = $employe;
+//     }
    
-   return $employeData;
+//    return $employeData;
     
+
+// }
+
+function iness_trimestrielle($annee ,$trimestre){
+    //Annee en cours
+
+    $sql = "SELECT nom,prenom,`matricule_inss`,COUNT(matricule) as nbre_mois,SUM(`base_pension_employeur`) as base_pension_employeur, SUM(`base_risque_employeur`) as base_risque_employeur FROM `history_inss` WHERE YEAR(periode)=$annee AND MONTH(periode) BETWEEN $trimestre and $trimestre+2 GROUP BY matricule";
+
+    $db = connexion();
+
+    $result = $db->query($sql);
+
+    $resultGet = [];
+
+    while ($r =  $result->fetch()) {
+        $r['periode'] = ['annee'=> $annee,'mois'=>$trimestre];
+        $r['motif'] = '';
+        $resultGet [] = $r;
+    }
+
+    return  $resultGet;
+
 
 }

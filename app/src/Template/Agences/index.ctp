@@ -7,9 +7,9 @@
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('New Agence'), ['action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Employes'), ['controller' => 'Employes', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Employe'), ['controller' => 'Employes', 'action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('Nouvel Agence'), ['action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('Listes des Employes'), ['controller' => 'Employes', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('Nouvel Employe'), ['controller' => 'Employes', 'action' => 'add']) ?></li>
     </ul>
 </nav>
 <div class="agences index large-9 medium-8 columns content">
@@ -32,9 +32,9 @@
                 <td><?= h($agence->created) ?></td>
                 <td><?= h($agence->modified) ?></td>
                 <td class="actions">
-                    <?= $this->Html->link(__('View'), ['action' => 'view', $agence->id]) ?>
-                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $agence->id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $agence->id], ['confirm' => __('Are you sure you want to delete # {0}?', $agence->id)]) ?>
+                    <?= $this->Html->link(__('Affiche'), ['action' => 'view', $agence->id]) ?>
+                    <?= $this->Html->link(__('Modifier'), ['action' => 'edit', $agence->id]) ?>
+                    <?= $this->Form->postLink(__('Supprimer'), ['action' => 'delete', $agence->id], ['confirm' => __('Are you sure you want to delete # {0}?', $agence->id)]) ?>
                 </td>
             </tr>
             <?php endforeach; ?>

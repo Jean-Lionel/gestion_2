@@ -7,15 +7,30 @@
 }
 
 .fixed-element{
-	 position: fixed;
+	position: fixed;
 }
 /*html{
 	height: 100px;
-}*/
+	}*/
 
-.current-value{
-	background: red;
-	font-size: 20px;
-	width: 400px;
-	display: none;
-}
+	.current-value{
+		background: red;
+		font-size: 20px;
+		width: 400px;
+		display: none;
+	}
+
+
+	.actions a
+	{
+		padding: 10px;
+	}
+
+	.actions a:hover
+	{
+		background: gold;
+	}
+
+	.actions img{
+		margin-right: 3px;
+	}

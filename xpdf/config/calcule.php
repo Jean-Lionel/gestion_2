@@ -1,6 +1,11 @@
 <?php
 require_once 'database.php';
 require_once 'functions.php';
+require_once('history_function.php');
+
+//On verifier si la date est bien regle avant de faire n'importe quele activite
+
+verifier_heure_regle();
 
 
 $employes = getEmployesData($periodeGet);

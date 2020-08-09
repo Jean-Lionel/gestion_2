@@ -8,11 +8,11 @@
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Html->link(__('Edit Cotation'), ['action' => 'edit', $cotation->id]) ?> </li>
-        <li><?= $this->Form->postLink(__('Delete Cotation'), ['action' => 'delete', $cotation->id], ['confirm' => __('Are you sure you want to delete # {0}?', $cotation->id)]) ?> </li>
-        <li><?= $this->Html->link(__('List Cotations'), ['action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Cotation'), ['action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Employes'), ['controller' => 'Employes', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Employe'), ['controller' => 'Employes', 'action' => 'add']) ?> </li>
+        <li><?= $this->Form->postLink(__('Supprimer Cotation'), ['action' => 'delete', $cotation->id], ['confirm' => __('Are you sure you want to delete # {0}?', $cotation->id)]) ?> </li>
+        <li><?= $this->Html->link(__('Listes des Cotations'), ['action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('Nouvel Cotation'), ['action' => 'add']) ?> </li>
+        <li><?= $this->Html->link(__('Listes des Employes'), ['controller' => 'Employes', 'action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('Nouvel Employe'), ['controller' => 'Employes', 'action' => 'add']) ?> </li>
     </ul>
 </nav>
 <div class="cotations view large-9 medium-8 columns content">

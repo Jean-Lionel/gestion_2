@@ -7,13 +7,13 @@
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('New Ancienete'), ['action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Ajustements'), ['controller' => 'Ajustements', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Ajustement'), ['controller' => 'Ajustements', 'action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('Nouvel Ancienete'), ['action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('Listes des Ajustements'), ['controller' => 'Ajustements', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('Nouvel Ajustement'), ['controller' => 'Ajustements', 'action' => 'add']) ?></li>
     </ul>
 </nav>
 <div class="ancienetes index large-9 medium-8 columns content">
-    <h3><?= __('Ancienetes') ?></h3>
+    <h3><?= __('Categorie des  ancienneté') ?></h3>
     <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>
@@ -30,9 +30,9 @@
                 <td><?= $this->Number->format($ancienete->debut) ?></td>
                 <td><?= $this->Number->format($ancienete->fin) ?></td>
                 <td class="actions">
-                    <?= $this->Html->link(__('View'), ['action' => 'view', $ancienete->id]) ?>
-                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $ancienete->id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $ancienete->id], ['confirm' => __('Are you sure you want to delete # {0}?', $ancienete->id)]) ?>
+                    <?= $this->Html->link(__('Afficher'), ['action' => 'view', $ancienete->id]) ?>
+                    <?= $this->Html->link(__('Modifier'), ['action' => 'edit', $ancienete->id]) ?>
+                    <?= $this->Form->postLink(__('Supprimer'), ['action' => 'delete', $ancienete->id], ['confirm' => __('Are you sure you want to delete # {0}?', $ancienete->id)]) ?>
                 </td>
             </tr>
             <?php endforeach; ?>

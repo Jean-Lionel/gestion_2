@@ -7,7 +7,7 @@
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('New Retraite'), ['action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('Ajouter Retraite'), ['action' => 'add']) ?></li>
     </ul>
 </nav>
 <div class="retraites index large-9 medium-8 columns content">
@@ -36,7 +36,7 @@
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $retraite->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $retraite->id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $retraite->id], ['confirm' => __('Are you sure you want to delete # {0}?', $retraite->id)]) ?>
+                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $retraite->id], ['confirm' => __('Voulez vous vraiment supprimer # {0}?', $retraite->id)]) ?>
                 </td>
             </tr>
             <?php endforeach; ?>

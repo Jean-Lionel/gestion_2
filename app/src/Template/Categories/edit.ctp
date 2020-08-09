@@ -13,17 +13,17 @@
                 ['confirm' => __('Are you sure you want to delete # {0}?', $category->id)]
             )
         ?></li>
-        <li><?= $this->Html->link(__('List Categories'), ['action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('List Ajustements'), ['controller' => 'Ajustements', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Ajustement'), ['controller' => 'Ajustements', 'action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Employes'), ['controller' => 'Employes', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Employe'), ['controller' => 'Employes', 'action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('Listes des Categories'), ['action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('Listes des  Ajustements'), ['controller' => 'Ajustements', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('Nouvel  Ajustement'), ['controller' => 'Ajustements', 'action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('Listes des Employes'), ['controller' => 'Employes', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('Nouvel Employe'), ['controller' => 'Employes', 'action' => 'add']) ?></li>
     </ul>
 </nav>
 <div class="categories form large-9 medium-8 columns content">
     <?= $this->Form->create($category) ?>
     <fieldset>
-        <legend><?= __('Edit Category') ?></legend>
+        <legend><?= __('Mdifier Category') ?></legend>
         <?php
             echo $this->Form->control('name');
         ?>

@@ -7,12 +7,12 @@
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('Edit Credit'), ['action' => 'edit', $credit->id]) ?> </li>
+        <li><?= $this->Html->link(__('Modifier Credit'), ['action' => 'edit', $credit->id]) ?> </li>
         <li><?= $this->Form->postLink(__('Efface le credit'), ['action' => 'delete', $credit->id], ['confirm' => __('Are you sure you want to delete # {0}?', $credit->id)]) ?> </li>
-        <li><?= $this->Html->link(__('List Credits'), ['action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Credit'), ['action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Variables'), ['controller' => 'Variables', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Variable'), ['controller' => 'Variables', 'action' => 'add']) ?> </li>
+        <li><?= $this->Html->link(__('Listes des Credits'), ['action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('Nouvel  Credit'), ['action' => 'add']) ?> </li>
+        <li><?= $this->Html->link(__('Listes des Variables'), ['controller' => 'Variables', 'action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('Nouvel Variable'), ['controller' => 'Variables', 'action' => 'add']) ?> </li>
     </ul>
 </nav>
 <div class="credits view large-9 medium-8 columns content">

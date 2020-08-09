@@ -7,12 +7,12 @@
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('Edit Avance'), ['action' => 'edit', $avance->id]) ?> </li>
-        <li><?= $this->Form->postLink(__('Delete Avance'), ['action' => 'delete', $avance->id], ['confirm' => __('Are you sure you want to delete # {0}?', $avance->id)]) ?> </li>
-        <li><?= $this->Html->link(__('List Avances'), ['action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Avance'), ['action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Variables'), ['controller' => 'Variables', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Variable'), ['controller' => 'Variables', 'action' => 'add']) ?> </li>
+        <li><?= $this->Html->link(__('Modifier Avance'), ['action' => 'edit', $avance->id]) ?> </li>
+        <li><?= $this->Form->postLink(__('Supprimer Avance'), ['action' => 'delete', $avance->id], ['confirm' => __('Are you sure you want to delete # {0}?', $avance->id)]) ?> </li>
+        <li><?= $this->Html->link(__('Liste des Avances'), ['action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('Nouvel Avance'), ['action' => 'add']) ?> </li>
+        <li><?= $this->Html->link(__('Listes des Variables'), ['controller' => 'Variables', 'action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('Nouvel Variable'), ['controller' => 'Variables', 'action' => 'add']) ?> </li>
     </ul>
 </nav>
 <div class="avances view large-9 medium-8 columns content">

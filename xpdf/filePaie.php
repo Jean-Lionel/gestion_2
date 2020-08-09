@@ -1,9 +1,27 @@
 <?php 
+header('Content-type:application/json');
+
 require_once('./config/getDate.php');
 require_once('./config/calcule.php');
 
-$employes = get_FilesPaie($employes);
+require_once('./config/history_function.php');
+ 
 
+//  $employes = json_encode($employes);
+
+// echo  $employes;
+
+//  die();
+
+if($periodeGet == $current_date)
+{
+    $employes = get_FilesPaie($employes);
+
+    save_or_update_file_pay($employes);
+
+}else{
+    $employes =  get_historique_from('history_file_pay', $periodeGet);
+}
 ob_start();
 ?>
 
@@ -82,7 +100,7 @@ ob_start();
 </tr>
 </table> -->
     <p style="text-align: center;"><u> FICHE DE PAIE : MOIS DE 
-        <?= $employes [0]['periode']['mois'] . ' / '. $employes[0]['periode']['annee']?>
+        <?= $periodeGet['mois'] . ' / '. $periodeGet['annee']?>
     </u></p>
 
 <table class="main-table">

@@ -7,13 +7,13 @@
 <nav class="large-2 medium-2 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('New Ajustement'), ['action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Ancienetes'), ['controller' => 'Ancienetes', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Ancienete'), ['controller' => 'Ancienetes', 'action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Categories'), ['controller' => 'Categories', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Category'), ['controller' => 'Categories', 'action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Indeminites'), ['controller' => 'Indeminites', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Indeminite'), ['controller' => 'Indeminites', 'action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('Nouvel Ajustement'), ['action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('Listes des Ancienetes'), ['controller' => 'Ancienetes', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('Nouvel Ancienete'), ['controller' => 'Ancienetes', 'action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('Listes des Categories'), ['controller' => 'Categories', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('Nouvel Category'), ['controller' => 'Categories', 'action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('Listes des Indeminites'), ['controller' => 'Indeminites', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('Nouvel Indeminite'), ['controller' => 'Indeminites', 'action' => 'add']) ?></li>
     </ul>
 </nav>
 <div class="ajustements index large-10 medium-10 columns content">
@@ -40,9 +40,9 @@
                 <td><?= $this->Number->format($ajustement->montant) ?></td>
 
                 <td class="actions">
-                    <?= $this->Html->link(__('View'), ['action' => 'view', $ajustement->id]) ?>
-                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $ajustement->id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $ajustement->id], ['confirm' => __('Are you sure you want to delete # {0}?', $ajustement->id)]) ?>
+                    <?= $this->Html->link(__('Affiche'), ['action' => 'view', $ajustement->id]) ?>
+                    <?= $this->Html->link(__('Modifier'), ['action' => 'edit', $ajustement->id]) ?>
+                    <?= $this->Form->postLink(__('Supprimer'), ['action' => 'delete', $ajustement->id], ['confirm' => __('Are you sure you want to delete # {0}?', $ajustement->id)]) ?>
                 </td>
             </tr>
             <?php endforeach; ?>

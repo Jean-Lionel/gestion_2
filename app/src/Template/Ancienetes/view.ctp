@@ -7,12 +7,12 @@
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('Edit Ancienete'), ['action' => 'edit', $ancienete->id]) ?> </li>
-        <li><?= $this->Form->postLink(__('Delete Ancienete'), ['action' => 'delete', $ancienete->id], ['confirm' => __('Are you sure you want to delete # {0}?', $ancienete->id)]) ?> </li>
-        <li><?= $this->Html->link(__('List Ancienetes'), ['action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Ancienete'), ['action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Ajustements'), ['controller' => 'Ajustements', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Ajustement'), ['controller' => 'Ajustements', 'action' => 'add']) ?> </li>
+        <li><?= $this->Html->link(__('Modier l\'Ancienete'), ['action' => 'edit', $ancienete->id]) ?> </li>
+        <li><?= $this->Form->postLink(__('Supprimer l\'Ancienete'), ['action' => 'delete', $ancienete->id], ['confirm' => __('Are you sure you want to delete # {0}?', $ancienete->id)]) ?> </li>
+        <li><?= $this->Html->link(__('Listes des Ancienetes'), ['action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('Nouvel Ancienete'), ['action' => 'add']) ?> </li>
+        <li><?= $this->Html->link(__('Listes des Ajustements'), ['controller' => 'Ajustements', 'action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('Nouvel Ajustement'), ['controller' => 'Ajustements', 'action' => 'add']) ?> </li>
     </ul>
 </nav>
 <div class="ancienetes view large-9 medium-8 columns content">

@@ -7,12 +7,12 @@
 <nav class="large-2 medium-2 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('Edit Agence'), ['action' => 'edit', $agence->id]) ?> </li>
-        <li><?= $this->Form->postLink(__('Delete Agence'), ['action' => 'delete', $agence->id], ['confirm' => __('Are you sure you want to delete # {0}?', $agence->id)]) ?> </li>
-        <li><?= $this->Html->link(__('List Agences'), ['action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Agence'), ['action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Employes'), ['controller' => 'Employes', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Employe'), ['controller' => 'Employes', 'action' => 'add']) ?> </li>
+        <li><?= $this->Html->link(__('Mdifier l\'agence'), ['action' => 'edit', $agence->id]) ?> </li>
+        <li><?= $this->Form->postLink(__('Supprimer l\' Agence'), ['action' => 'delete', $agence->id], ['confirm' => __('Are you sure you want to delete # {0}?', $agence->id)]) ?> </li>
+        <li><?= $this->Html->link(__('Listes des Agences'), ['action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('Nouvel Agences'), ['action' => 'add']) ?> </li>
+        <li><?= $this->Html->link(__('Listes des Employes'), ['controller' => 'Employes', 'action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('Nouvel Employe'), ['controller' => 'Employes', 'action' => 'add']) ?> </li>
     </ul>
 </nav>
 <div class="agences view large-10 medium-10 columns content">

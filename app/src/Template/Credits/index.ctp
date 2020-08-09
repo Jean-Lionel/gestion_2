@@ -7,8 +7,8 @@
 <nav class="large-2 medium-2 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('New Credit'), ['action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Variables'), ['controller' => 'Variables', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('Nouvel Credit'), ['action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('Listes des Variables'), ['controller' => 'Variables', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('New Variable'), ['controller' => 'Variables', 'action' => 'add']) ?></li>
     </ul>
 </nav>
@@ -51,9 +51,9 @@
                     <td><?= h($credit->date_credit) ?></td>
                     <td><?= h($credit->date_fin) ?></td>
                     <td class="actions">
-                        <?= $this->Html->link(__('View'), ['action' => 'view', $credit->id]) ?>
-                        <?= $this->Html->link(__('Edit'), ['action' => 'edit', $credit->id]) ?>
-                        <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $credit->id], ['confirm' => __('Are you sure you want to delete # {0}?', $credit->id)]) ?>
+                        <?= $this->Html->link(__('Afficher'), ['action' => 'view', $credit->id]) ?>
+                        <?= $this->Html->link(__('Modifier'), ['action' => 'edit', $credit->id]) ?>
+                        <?= $this->Form->postLink(__('Supprimer'), ['action' => 'delete', $credit->id], ['confirm' => __('Are you sure you want to delete # {0}?', $credit->id)]) ?>
                     </td>
                 </tr>
                 <?php endforeach; ?>

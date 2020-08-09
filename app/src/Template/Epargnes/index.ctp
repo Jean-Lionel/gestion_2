@@ -7,9 +7,9 @@
 <nav class="large-2 medium-2 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('New Epargne'), ['action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Banques'), ['controller' => 'Banques', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Banque'), ['controller' => 'Banques', 'action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('Nouvel Epargne'), ['action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('Listes des Banques'), ['controller' => 'Banques', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('Nouvel Banque'), ['controller' => 'Banques', 'action' => 'add']) ?></li>
     </ul>
 </nav>
 <div class="epargnes index large-10 medium-10 columns content">

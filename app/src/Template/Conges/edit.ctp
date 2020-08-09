@@ -10,10 +10,10 @@
         <li><?= $this->Form->postLink(
                 __('Delete'),
                 ['action' => 'delete', $conge->id],
-                ['confirm' => __('Are you sure you want to delete # {0}?', $conge->id)]
+                ['confirm' => __('Voulez vous vraiment supprimer # {0}?', $conge->id)]
             )
         ?></li>
-        <li><?= $this->Html->link(__('List Conges'), ['action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('Listes des Conges'), ['action' => 'index']) ?></li>
     </ul>
 </nav>
 <div class="conges form large-9 medium-8 columns content">

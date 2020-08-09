@@ -1,17 +1,17 @@
 <?php
 /**
- * @var \App\View\AppView $this
- * @var \App\Model\Entity\EmployesConge[]|\Cake\Collection\CollectionInterface $employesConges
- */
+* @var \App\View\AppView $this
+* @var \App\Model\Entity\EmployesConge[]|\Cake\Collection\CollectionInterface $employesConges
+*/
 ?>
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('New Employes Conge'), ['action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Employes'), ['controller' => 'Employes', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Employe'), ['controller' => 'Employes', 'action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Conges'), ['controller' => 'Conges', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Conge'), ['controller' => 'Conges', 'action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('Nouvel Employes en Conge'), ['action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('Listes des Employes'), ['controller' => 'Employes', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('Nouvel Employe'), ['controller' => 'Employes', 'action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('Listes Conges'), ['controller' => 'Conges', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('Nouvel Conge'), ['controller' => 'Conges', 'action' => 'add']) ?></li>
     </ul>
 </nav>
 <div class="employesConges index large-9 medium-8 columns content">

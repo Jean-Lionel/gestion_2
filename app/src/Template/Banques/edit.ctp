@@ -13,7 +13,7 @@
                 ['confirm' => __('Are you sure you want to delete # {0}?', $banque->id)]
             )
         ?></li>
-        <li><?= $this->Html->link(__('List Banques'), ['action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('Listes des Banques'), ['action' => 'index']) ?></li>
         <!-- <li><?= $this->Html->link(__('List Assurances'), ['controller' => 'Assurances', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('New Assurance'), ['controller' => 'Assurances', 'action' => 'add']) ?></li>
         <li><?= $this->Html->link(__('List Employes'), ['controller' => 'Employes', 'action' => 'index']) ?></li>

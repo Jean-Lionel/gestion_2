@@ -7,21 +7,21 @@
 <nav class="large-2 medium-2 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('New Employe'), ['action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Levels'), ['controller' => 'Levels', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Level'), ['controller' => 'Levels', 'action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Agences'), ['controller' => 'Agences', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Agence'), ['controller' => 'Agences', 'action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Fonctions'), ['controller' => 'Fonctions', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Fonction'), ['controller' => 'Fonctions', 'action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Services'), ['controller' => 'Services', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Service'), ['controller' => 'Services', 'action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Categories'), ['controller' => 'Categories', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Category'), ['controller' => 'Categories', 'action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Banques'), ['controller' => 'Banques', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Banque'), ['controller' => 'Banques', 'action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Cotations'), ['controller' => 'Cotations', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Cotation'), ['controller' => 'Cotations', 'action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('Nouvel Employe'), ['action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('List Niveaux'), ['controller' => 'Levels', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('Nouvel Niveau'), ['controller' => 'Levels', 'action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('Listes des Agences'), ['controller' => 'Agences', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('Nouvel Agence'), ['controller' => 'Agences', 'action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('Lists des Fonctions'), ['controller' => 'Fonctions', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('Nouvel Fonction'), ['controller' => 'Fonctions', 'action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('Listes des Services'), ['controller' => 'Services', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('Nouvel Service'), ['controller' => 'Services', 'action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('Listes des Categories'), ['controller' => 'Categories', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('Nouvel Categorie'), ['controller' => 'Categories', 'action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('Listes des Banques'), ['controller' => 'Banques', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('Nouvel Banque'), ['controller' => 'Banques', 'action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('Listes des Cotations'), ['controller' => 'Cotations', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('Nouvel Cotation'), ['controller' => 'Cotations', 'action' => 'add']) ?></li>
     </ul>
 </nav>
 <div class="employes index large-10 medium-10 columns content">

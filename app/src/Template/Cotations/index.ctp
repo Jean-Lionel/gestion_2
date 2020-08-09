@@ -7,9 +7,9 @@
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('New Cotation'), ['action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Employes'), ['controller' => 'Employes', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Employe'), ['controller' => 'Employes', 'action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('Nouvel Cotation'), ['action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('Lists des Employes'), ['controller' => 'Employes', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('Nouvel Employe'), ['controller' => 'Employes', 'action' => 'add']) ?></li>
     </ul>
 </nav>
 <div class="cotations index large-9 medium-8 columns content">
@@ -34,9 +34,9 @@
                 <td><?= h($cotation->created) ?></td>
                 <td><?= h($cotation->modified) ?></td>
                 <td class="actions">
-                    <?= $this->Html->link(__('View'), ['action' => 'view', $cotation->id]) ?>
-                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $cotation->id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $cotation->id], ['confirm' => __('Are you sure you want to delete # {0}?', $cotation->id)]) ?>
+                    <?= $this->Html->link(__('Afficher'), ['action' => 'view', $cotation->id]) ?>
+                    <?= $this->Html->link(__('Modifier'), ['action' => 'edit', $cotation->id]) ?>
+                    <?= $this->Form->postLink(__('Supprimer'), ['action' => 'delete', $cotation->id], ['confirm' => __('Are you sure you want to delete # {0}?', $cotation->id)]) ?>
                 </td>
             </tr>
             <?php endforeach; ?>

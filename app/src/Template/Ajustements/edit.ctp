@@ -7,13 +7,13 @@
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?=__('Actions')?></li>
-        <li><?=$this->Html->link(__('List Ajustements'), ['action' => 'index'])?></li>
-        <li><?=$this->Html->link(__('List Ancienetes'), ['controller' => 'Ancienetes', 'action' => 'index'])?></li>
-        <li><?=$this->Html->link(__('New Ancienete'), ['controller' => 'Ancienetes', 'action' => 'add'])?></li>
-        <li><?=$this->Html->link(__('List Categories'), ['controller' => 'Categories', 'action' => 'index'])?></li>
-        <li><?=$this->Html->link(__('New Category'), ['controller' => 'Categories', 'action' => 'add'])?></li>
-        <li><?=$this->Html->link(__('List Indeminites'), ['controller' => 'Indeminites', 'action' => 'index'])?></li>
-        <li><?=$this->Html->link(__('New Indeminite'), ['controller' => 'Indeminites', 'action' => 'add'])?></li>
+        <li><?=$this->Html->link(__('Listes des Ajustements'), ['action' => 'index'])?></li>
+        <li><?=$this->Html->link(__('Listes des Ancienetes'), ['controller' => 'Ancienetes', 'action' => 'index'])?></li>
+        <li><?=$this->Html->link(__('Nouvel Ancienete'), ['controller' => 'Ancienetes', 'action' => 'add'])?></li>
+        <li><?=$this->Html->link(__('Listes des Categories'), ['controller' => 'Categories', 'action' => 'index'])?></li>
+        <li><?=$this->Html->link(__('Nouvel Categorie'), ['controller' => 'Categories', 'action' => 'add'])?></li>
+        <li><?=$this->Html->link(__('Listes des Indeminites'), ['controller' => 'Indeminites', 'action' => 'index'])?></li>
+        <li><?=$this->Html->link(__('Nouvel Indeminite'), ['controller' => 'Indeminites', 'action' => 'add'])?></li>
     </ul>
 </nav>
 <div class="ajustements form large-9 medium-8 columns content">

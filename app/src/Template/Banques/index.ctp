@@ -9,7 +9,7 @@
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('New Banque'), ['action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('Nouvel Banque'), ['action' => 'add']) ?></li>
        <!--  <li><?= $this->Html->link(__('List Assurances'), ['controller' => 'Assurances', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('New Assurance'), ['controller' => 'Assurances', 'action' => 'add']) ?></li>
         <li><?= $this->Html->link(__('List Employes'), ['controller' => 'Employes', 'action' => 'index']) ?></li>
@@ -41,9 +41,9 @@
                     <td><?= $this->Number->format($banque->id) ?></td>
                     <td><?= h($banque->name) ?></td>
                     <td class="actions">
-                        <?= $this->Html->link(__('View'), ['action' => 'view', $banque->id]) ?>
-                        <?= $this->Html->link(__('Edit'), ['action' => 'edit', $banque->id]) ?>
-                        <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $banque->id], ['confirm' => __('Are you sure you want to delete # {0}?', $banque->id)]) ?>
+                        <?= $this->Html->link(__('Afficher'), ['action' => 'view', $banque->id]) ?>
+                        <?= $this->Html->link(__('Modifier'), ['action' => 'edit', $banque->id]) ?>
+                        <?= $this->Form->postLink(__('Supprimer'), ['action' => 'delete', $banque->id], ['confirm' => __('Are you sure you want to delete # {0}?', $banque->id)]) ?>
                     </td>
                 </tr>
                 <?php endforeach; ?>

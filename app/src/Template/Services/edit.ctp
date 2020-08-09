@@ -10,18 +10,18 @@
         <li><?= $this->Form->postLink(
                 __('Delete'),
                 ['action' => 'delete', $service->id],
-                ['confirm' => __('Are you sure you want to delete # {0}?', $service->id)]
+                ['confirm' => __('Voulez vous vraiment supprimer # {0}?', $service->id)]
             )
         ?></li>
-        <li><?= $this->Html->link(__('List Services'), ['action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('List Employes'), ['controller' => 'Employes', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Employe'), ['controller' => 'Employes', 'action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('Listes des Services'), ['action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('Listes des Employes'), ['controller' => 'Employes', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('Nouvel Employe'), ['controller' => 'Employes', 'action' => 'add']) ?></li>
     </ul>
 </nav>
 <div class="services form large-9 medium-8 columns content">
     <?= $this->Form->create($service) ?>
     <fieldset>
-        <legend><?= __('Edit Service') ?></legend>
+        <legend><?= __('Modifier Service') ?></legend>
         <?php
             echo $this->Form->control('name');
         ?>

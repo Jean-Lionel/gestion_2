@@ -8,15 +8,15 @@
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Html->link(__('Edit Fonction'), ['action' => 'edit', $fonction->id]) ?> </li>
-        <li><?= $this->Form->postLink(__('Delete Fonction'), ['action' => 'delete', $fonction->id], ['confirm' => __('Are you sure you want to delete # {0}?', $fonction->id)]) ?> </li>
-        <li><?= $this->Html->link(__('List Fonctions'), ['action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Fonction'), ['action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Employes'), ['controller' => 'Employes', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Employe'), ['controller' => 'Employes', 'action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Assurances'), ['controller' => 'Assurances', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Assurance'), ['controller' => 'Assurances', 'action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Indeminites'), ['controller' => 'Indeminites', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Indeminite'), ['controller' => 'Indeminites', 'action' => 'add']) ?> </li>
+        <li><?= $this->Form->postLink(__('Supprimer  Fonction'), ['action' => 'delete', $fonction->id], ['confirm' => __('Voulez vous vraimnt supprimer # {0}?', $fonction->id)]) ?> </li>
+        <li><?= $this->Html->link(__('Listes des Fonctions'), ['action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('Nouvel Fonction'), ['action' => 'add']) ?> </li>
+        <li><?= $this->Html->link(__('Listes des Employes'), ['controller' => 'Employes', 'action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('Nouvel Employe'), ['controller' => 'Employes', 'action' => 'add']) ?> </li>
+        <li><?= $this->Html->link(__('Listes des  Assurances'), ['controller' => 'Assurances', 'action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('Nouvel Assurance'), ['controller' => 'Assurances', 'action' => 'add']) ?> </li>
+        <li><?= $this->Html->link(__('Listes des  Indeminites'), ['controller' => 'Indeminites', 'action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('Nouvel Indeminite'), ['controller' => 'Indeminites', 'action' => 'add']) ?> </li>
     </ul>
 </nav>
 <div class="fonctions view large-9 medium-8 columns content">
@@ -45,7 +45,7 @@
     </table>
 
     <div class="related">
-        <h4><?= __('Related Employes') ?></h4>
+        <h4><?= __('Rapport Employes') ?></h4>
         <?php if (!empty($fonction->employes)): ?>
         <table cellpadding="0" cellspacing="0">
             <tr>

@@ -1,8 +1,26 @@
 <?php 
+//header('Content-Type: application/json');
 require_once('./config/getDate.php');
 require_once('./config/calcule.php');
+require_once('./config/history_function.php');
 
-$employes = ipr_get_file($employes);
+
+
+// echo json_encode($employes);
+
+
+if($periodeGet == $current_date)
+{
+    $employes = ipr_get_file($employes);
+
+   save_or_update_ipr($employes);
+
+}else{
+    $employes =  get_historique_from('history_ipr', $periodeGet);
+}
+
+
+
 
 ob_start();
 ?>
@@ -63,7 +81,7 @@ ob_start();
 
 <?php require("include/header_portrait.php");?>
 
-<p style="text-align: center;"><u> DECLARATION IPR: MOIS DE <?= $employes[0]['periode']['mois']. ' / '.$employes[0]['periode']['annee'] ?></u></p>
+<p style="text-align: center;"><u> DECLARATION IPR: MOIS DE <?= $periodeGet['mois']. ' / '.$periodeGet['annee'] ?></u></p>
 
 <table class="main-table" center>
   <thead>

@@ -10,12 +10,12 @@
         <li><?= $this->Form->postLink(
                 __('Delete'),
                 ['action' => 'delete', $epargne->id],
-                ['confirm' => __('Are you sure you want to delete # {0}?', $epargne->id)]
+                ['confirm' => __('Voulez vous vraiment supprimer # {0}?', $epargne->id)]
             )
         ?></li>
-        <li><?= $this->Html->link(__('List Epargnes'), ['action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('List Banques'), ['controller' => 'Banques', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Banque'), ['controller' => 'Banques', 'action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('Listes des  Epargnes'), ['action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('Listes des Banques'), ['controller' => 'Banques', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('Nouvel Banque'), ['controller' => 'Banques', 'action' => 'add']) ?></li>
     </ul>
 </nav>
 <div class="epargnes form large-9 medium-8 columns content">

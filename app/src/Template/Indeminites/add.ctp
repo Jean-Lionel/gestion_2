@@ -7,11 +7,11 @@
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('List Indeminites'), ['action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('List Ajustements'), ['controller' => 'Ajustements', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Ajustement'), ['controller' => 'Ajustements', 'action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Fonctions'), ['controller' => 'Fonctions', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Fonction'), ['controller' => 'Fonctions', 'action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('Listes des  Indeminites'), ['action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('Listes des  Ajustements'), ['controller' => 'Ajustements', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('Nouvel Ajustement'), ['controller' => 'Ajustements', 'action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('Listes des Fonctions'), ['controller' => 'Fonctions', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('Nouvel Fonction'), ['controller' => 'Fonctions', 'action' => 'add']) ?></li>
     </ul>
 </nav>
 <div class="indeminites form large-9 medium-8 columns content">

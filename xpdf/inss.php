@@ -1,9 +1,26 @@
 <?php
+// /header('Content-type: application/json');
 require_once('./config/getDate.php');
-
 require_once('./config/calcule.php');
+require_once('./config/history_function.php');
 
-$employesData = get_file_iness($employes);
+
+// $employesData = get_file_iness($employes);
+
+// echo json_encode($employesData[0]);
+// die();
+
+
+if($periodeGet == $current_date)
+{
+	$employesData = get_file_iness($employes);
+
+	
+	save_or_update_inss_mensuel($employesData);
+
+}else{
+	$employesData =  get_historique_from('history_inss', $periodeGet);
+}
 
 ob_start();
 ?>
@@ -52,9 +69,9 @@ ob_start();
 
 	<?php require("include/footer.php"); ?>
 
-<?php require("include/header_portrait.php");?>
+	<?php require("include/header_portrait.php");?>
 
-	<p style="text-align: center;"><u>DECLARATION INSS : MOIS DE <?= $employesData[0]['periode']['mois'] . "/".$employesData[0]['periode']['annee'] ?></u></p>
+	<p style="text-align: center;"><u>DECLARATION INSS : MOIS DE <?= $periodeGet['mois'] . "/".$periodeGet['annee'] ?></u></p>
 	<table class="main-table">
 		<tr class="header-title">
 			<td colspan="2" rowspan="2" class="noborder"></td>
@@ -85,22 +102,22 @@ ob_start();
 		</tr>
 
 		<?php $x=0; foreach ($employesData as $key => $value): ?>
-			<tr>
-				<td><?= ++$x ?></td>
-				<td class="left-text"><?= strtoupper($value['nom']).' '. $value['prenom'] ?></td>
-				<td><?= afficheNombre($value['base_pension_employe']) ?></td>
-				<td><?= afficheNombre($value['montant_pension_employe']) ?></td>
-				<td><?= afficheNombre($value['base_risque_employe']) ?></td>
-				<td><?= afficheNombre($value['montant_risque_employe']) ?></td>
-				<td><?= afficheNombre($value['base_pension_employeur']) ?></td>
-				<td><?= afficheNombre($value['montant_pension_employeur']) ?></td>
-				<td><?= afficheNombre($value['base_risque_employeur']) ?></td>
-				<td><?= afficheNombre($value['montant_risque_employeur']) ?></td>
-				<td><?= afficheNombre($value['total']) ?></td>
-			</tr>
-		<?php endforeach; ?>
+		<tr>
+			<td><?= ++$x ?></td>
+			<td class="left-text"><?= strtoupper($value['nom']).' '. $value['prenom'] ?></td>
+			<td><?= afficheNombre($value['base_pension_employe']) ?></td>
+			<td><?= afficheNombre($value['montant_pension_employe']) ?></td>
+			<td><?= afficheNombre($value['base_risque_employe']) ?></td>
+			<td><?= afficheNombre($value['montant_risque_employe']) ?></td>
+			<td><?= afficheNombre($value['base_pension_employeur']) ?></td>
+			<td><?= afficheNombre($value['montant_pension_employeur']) ?></td>
+			<td><?= afficheNombre($value['base_risque_employeur']) ?></td>
+			<td><?= afficheNombre($value['montant_risque_employeur']) ?></td>
+			<td><?= afficheNombre($value['total']) ?></td>
+		</tr>
+	<?php endforeach; ?>
 
-		<tr class="total">
+	<tr class="total">
 
 		<td colspan="2" class="noborder" style="border-bottom: none;">TOTAL</td>
 
@@ -115,32 +132,32 @@ ob_start();
 
 
 		<td><?= afficheNombre(count_sum_colonne_table($employesData, 'total') + 3);//tricherie de +3 ?></td>
-			
-		</tr>
 
-	</table>
+	</tr>
 
-	<table class="footer-info" style="width: 100%">
+</table>
 
-		<tr>
-			<td style="width: 45%">
+<table class="footer-info" style="width: 100%">
 
-				<p>LE DIRECTEUR ADMINISTRATIF ET FINANCIER</p>
-				<p>MANIRAKIZA Francine</p>
-				
-			</td>
+	<tr>
+		<td style="width: 45%">
 
-			<td style="width: 15%">
-				
-			</td>
+			<p>LE DIRECTEUR ADMINISTRATIF ET FINANCIER</p>
+			<p>MANIRAKIZA Francine</p>
 
-			<td style="width: 40%; ">
-				<p style="text-align: right;">LE DIRECTEUR GENERAL</p>
-				<p style="text-align: right;">Ir Apollinaire SINDIHEBURA </p>
-			</td>
-		</tr>
-		
-	</table>
+		</td>
+
+		<td style="width: 15%">
+
+		</td>
+
+		<td style="width: 40%; ">
+			<p style="text-align: right;">LE DIRECTEUR GENERAL</p>
+			<p style="text-align: right;">Ir Apollinaire SINDIHEBURA </p>
+		</td>
+	</tr>
+
+</table>
 
 </page>
 

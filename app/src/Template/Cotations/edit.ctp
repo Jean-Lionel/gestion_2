@@ -13,15 +13,15 @@
                 ['confirm' => __('Are you sure you want to delete # {0}?', $cotation->id)]
             )
         ?></li>
-        <li><?= $this->Html->link(__('List Cotations'), ['action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('List Employes'), ['controller' => 'Employes', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Employe'), ['controller' => 'Employes', 'action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('Listes des  Cotations'), ['action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('Listes des  Employes'), ['controller' => 'Employes', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('Nouvel Employe'), ['controller' => 'Employes', 'action' => 'add']) ?></li>
     </ul>
 </nav>
 <div class="cotations form large-9 medium-8 columns content">
     <?= $this->Form->create($cotation) ?>
     <fieldset>
-        <legend><?= __('Edit Cotation') ?></legend>
+        <legend><?= __('Moodifier Cotation') ?></legend>
         <?php
             echo $this->Form->control('employe_id', ['options' => $employes]);
             echo $this->Form->control('points');

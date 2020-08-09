@@ -1,8 +1,21 @@
 <?php
+//header('Content-type:application/json');
 require_once('./config/getDate.php');
 require_once('./config/calcule.php');
+require_once('./config/history_function.php');
 
-$resultat = regularisation_get_file($employes);
+
+
+// echo json_encode($resultat[0]);
+if($periodeGet == $current_date)
+{
+    $resultat = regularisation_get_file($employes);
+
+	get_file_regularisation($resultat);
+
+}else{
+    $resultat =  get_historique_from('history_regularisation', $periodeGet);
+}
 
 
 $totalGeneral = 0;
@@ -47,7 +60,7 @@ ob_start();
 
 	<?php require("include/header_portrait.php");?>
 
-	<p style="text-align: center;"><u> REGULARISATION NON IMPOSABLE  <?= $employesTables[0][0]['periode']['mois']. " / ". $employesTables[0][0]['periode']['annee'] ?> </u></p>
+	<p style="text-align: center;"><u> REGULARISATION NON IMPOSABLE  <?= $periodeGet['mois']. " / ". $periodeGet['annee'] ?> </u></p>
 
 <?php foreach ($employesTables as $key => $value_reg):  ?>
 						

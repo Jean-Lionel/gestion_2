@@ -7,10 +7,10 @@
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('Edit Misepied'), ['action' => 'edit', $misepied->id]) ?> </li>
-        <li><?= $this->Form->postLink(__('Delete Misepied'), ['action' => 'delete', $misepied->id], ['confirm' => __('Are you sure you want to delete # {0}?', $misepied->id)]) ?> </li>
-        <li><?= $this->Html->link(__('List Misepieds'), ['action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Misepied'), ['action' => 'add']) ?> </li>
+        <li><?= $this->Html->link(__('Modifier Misepied'), ['action' => 'edit', $misepied->id]) ?> </li>
+        <li><?= $this->Form->postLink(__('Supprimer Misepied'), ['action' => 'delete', $misepied->id], ['confirm' => __('Voulez vous vraiment supprimer # {0}?', $misepied->id)]) ?> </li>
+        <li><?= $this->Html->link(__('Listes des Misepieds'), ['action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('Nouvel Misepied'), ['action' => 'add']) ?> </li>
     </ul>
 </nav>
 <div class="misepieds view large-9 medium-8 columns content">

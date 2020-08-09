@@ -10,10 +10,10 @@
         <li><?= $this->Form->postLink(
                 __('Delete'),
                 ['action' => 'delete', $misepied->id],
-                ['confirm' => __('Are you sure you want to delete # {0}?', $misepied->id)]
+                ['confirm' => __('Voulez vous vraiment supprimer # {0}?', $misepied->id)]
             )
         ?></li>
-        <li><?= $this->Html->link(__('List Misepieds'), ['action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('Listes des  Misepieds'), ['action' => 'index']) ?></li>
     </ul>
 </nav>
 <div class="misepieds form large-9 medium-8 columns content">

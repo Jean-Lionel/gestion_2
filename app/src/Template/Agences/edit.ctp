@@ -14,8 +14,8 @@
             )
         ?></li>
         <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('Liste des agences'), ['action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('listes des Employes'), ['controller' => 'Employes', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('Listes des agences'), ['action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('Listes des Employes'), ['controller' => 'Employes', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('Nouvel employe'), ['controller' => 'Employes', 'action' => 'add']) ?></li>
     </ul>
 </nav>

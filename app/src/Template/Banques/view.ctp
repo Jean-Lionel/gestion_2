@@ -7,9 +7,11 @@
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('Edit Banque'), ['action' => 'edit', $banque->id]) ?> </li>
-        <li><?= $this->Form->postLink(__('Delete Banque'), ['action' => 'delete', $banque->id], ['confirm' => __('Are you sure you want to delete # {0}?', $banque->id)]) ?> </li>
-         <li><?= $this->Html->link(__('List Banques'), ['action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('Modifier Banque'), ['action' => 'edit', $banque->id]) ?> </li>
+        <li><?= $this->Form->postLink(__('Supprimer Banque'), ['action' => 'delete', $banque->id], ['confirm' => __('Are you sure you want to delete # {0}?', $banque->id)]) ?> </li>
+         <li><?= $this->Html->link(__('Listes des Banques'), ['action' => 'index']) ?> </li>
+
+
         <!--
         <li><?= $this->Html->link(__('New Banque'), ['action' => 'add']) ?> </li>
         <li><?= $this->Html->link(__('List Assurances'), ['controller' => 'Assurances', 'action' => 'index']) ?> </li>

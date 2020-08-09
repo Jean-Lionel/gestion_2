@@ -8,15 +8,15 @@
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Html->link(__('Edit Ajustement'), ['action' => 'edit', $ajustement->id]) ?> </li>
-        <li><?= $this->Form->postLink(__('Delete Ajustement'), ['action' => 'delete', $ajustement->id], ['confirm' => __('Are you sure you want to delete # {0}?', $ajustement->id)]) ?> </li>
-        <li><?= $this->Html->link(__('List Ajustements'), ['action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Ajustement'), ['action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Ancienetes'), ['controller' => 'Ancienetes', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Ancienete'), ['controller' => 'Ancienetes', 'action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Categories'), ['controller' => 'Categories', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Category'), ['controller' => 'Categories', 'action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Indeminites'), ['controller' => 'Indeminites', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Indeminite'), ['controller' => 'Indeminites', 'action' => 'add']) ?> </li>
+        <li><?= $this->Form->postLink(__('Supprimer Ajustement'), ['action' => 'delete', $ajustement->id], ['confirm' => __('Are you sure you want to delete # {0}?', $ajustement->id)]) ?> </li>
+        <li><?= $this->Html->link(__('Listes des  Ajustements'), ['action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('Nouvel Ajustement'), ['action' => 'add']) ?> </li>
+        <li><?= $this->Html->link(__('Listes des Ancienetes'), ['controller' => 'Ancienetes', 'action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('Nouvel Ancienete'), ['controller' => 'Ancienetes', 'action' => 'add']) ?> </li>
+        <li><?= $this->Html->link(__('Listes des  Categories'), ['controller' => 'Categories', 'action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('Nouvel Category'), ['controller' => 'Categories', 'action' => 'add']) ?> </li>
+        <li><?= $this->Html->link(__('Listes des Indeminites'), ['controller' => 'Indeminites', 'action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('Nouvel Indeminite'), ['controller' => 'Indeminites', 'action' => 'add']) ?> </li>
     </ul>
 </nav>
 <div class="ajustements view large-9 medium-8 columns content">

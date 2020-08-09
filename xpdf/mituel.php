@@ -1,9 +1,20 @@
 <?php 
+// header('Content-type:application/json');
 require_once('./config/getDate.php');
 require_once('./config/calcule.php');
 
 
-$employes = mituel_get_file($employes);
+
+if($periodeGet == $current_date)
+{
+    $employes = mituel_get_file($employes);
+
+    save_or_update_mituel($employes);
+
+}else{
+    $employes =  get_historique_from('history_mituel', $periodeGet);
+}
+
 
 ob_start();
 ?>
@@ -60,7 +71,7 @@ ob_start();
 
 <?php require("include/header_portrait.php");?>
 
-<h4 style="text-align: center;"><u>DECLARATION  MUTUELLE : MOIS DE <?= $employes[0]['periode']['mois'] . '/'. $employes[0]['periode']['annee']?> </u></h4>
+<h4 style="text-align: center;"><u>DECLARATION  MUTUELLE : MOIS DE <?= $periodeGet['mois'] . '/'. $periodeGet['annee']?> </u></h4>
 <table class="main-table" center>
     <thead>
       <tr>
