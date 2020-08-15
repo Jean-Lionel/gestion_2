@@ -13,6 +13,20 @@
     </ul>
 </nav>
 <div class="credits form large-9 medium-8 columns content">
+
+      <?= $this->Form->create("",['type'=>'get','action'=>'add']); ?>
+    <div class="row">
+  
+     <div class="medium-7 columns">
+        <?= $this->Form->control("keyWord",['label'=>false,'default'=>$this->request->query('keyWord'),'placeholder'=>'Entre votre mot de rechercher']); ?>
+    </div>
+     <?= $this->Form->end(); ?>
+
+
+</div>
+
+
+
     <?= $this->Form->create($credit) ?>
     <fieldset>
         <legend class="text-center"><?= __('Nouvel Crédit') ?></legend>

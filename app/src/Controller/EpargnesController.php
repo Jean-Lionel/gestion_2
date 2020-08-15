@@ -79,6 +79,18 @@ class EpargnesController extends AppController
         $variables = $this->Epargnes->Variables->find('list', [
             'order'=>['name'],
             'limit' => 200]);
+
+         $keyWord = $this->request->query('keyWord');
+         
+
+         if($keyWord ){
+            $variables = $this->Epargnes->Variables->find('list', [
+                    'conditions' => ['Variables.name LIKE '=> '%'.$keyWord.'%'],
+                    'order' => ['Variables.name'=> 'ASC'],
+
+                    'limit' => 5]);
+         }
+
         $this->set(compact('epargne', 'variables'));
     }
 

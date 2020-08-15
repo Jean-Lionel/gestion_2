@@ -26,7 +26,7 @@ class AvancesController extends AppController
         $this->paginate = [
             'contain' => ['Variables'],
         ];
-        $avances = $this->paginate($this->Avances);
+        $avances = $this->paginate($this->Avances,['order' =>['date_avance' => 'DESC'] ]);
 
         $this->set(compact('avances'));
     }
@@ -87,6 +87,17 @@ class AvancesController extends AppController
             
         }
         $variables = $this->Avances->Variables->find('list', ['limit' => 200]);
+
+        $keyWord = $this->request->query('keyWord');
+
+        if($keyWord){
+             $variables = $this->Avances->Variables->find('list', [
+                'conditions'=>[
+                    'Variables.name LIKE' => '%'.$keyWord.'%',
+                ],
+                'limit' => 5]);
+
+        }
         $this->set(compact('avance', 'variables'));
     }
 

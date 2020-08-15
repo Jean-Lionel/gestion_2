@@ -32,9 +32,9 @@
                 <td><?= h($indeminite->name) ?></td>
                 <td><?= $this->Number->format($indeminite->is_activated) ?></td>
                 <td class="actions">
-                    <?= $this->Html->link(__('View'), ['action' => 'view', $indeminite->id]) ?>
-                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $indeminite->id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $indeminite->id], ['confirm' => __('Are you sure you want to delete # {0}?', $indeminite->id)]) ?>
+                    <?= $this->Html->link(__('Afficher'), ['action' => 'view', $indeminite->id]) ?>
+                    <?= $this->Html->link(__('Modifier'), ['action' => 'edit', $indeminite->id]) ?>
+                    <?= $this->Form->postLink(__('Supprimer'), ['action' => 'delete', $indeminite->id], ['confirm' => __('Are you sure you want to delete # {0}?', $indeminite->id)]) ?>
                 </td>
             </tr>
             <?php endforeach; ?>

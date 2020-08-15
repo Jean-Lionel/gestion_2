@@ -7,7 +7,7 @@
 <nav class="large-2 medium-2 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('New Variable'), ['action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('Nouvel variable'), ['action' => 'add']) ?></li>
     </ul>
 </nav>
 <div class="variables index large-10 medium-10 columns content">
@@ -41,9 +41,9 @@
                     <td><?= h($variable->created) ?></td>
                     <td><?= h($variable->modified) ?></td>
                     <td class="actions">
-                        <?= $this->Html->link(__('View'), ['action' => 'view', $variable->id]) ?>
-                        <?= $this->Html->link(__('Edit'), ['action' => 'edit', $variable->id]) ?>
-                        <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $variable->id], ['confirm' => __('Are you sure you want to delete # {0}?', $variable->id)]) ?>
+                        <?= $this->Html->link(__('Afficher'), ['action' => 'view', $variable->id]) ?>
+                        <?= $this->Html->link(__('Modifier'), ['action' => 'edit', $variable->id]) ?>
+                        <?= $this->Form->postLink(__('Supprimer'), ['action' => 'delete', $variable->id], ['confirm' => __('Are you sure you want to delete # {0}?', $variable->id)]) ?>
                     </td>
                 </tr>
                 <?php endforeach; ?>

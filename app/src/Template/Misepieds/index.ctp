@@ -4,13 +4,13 @@
  * @var \App\Model\Entity\Misepied[]|\Cake\Collection\CollectionInterface $misepieds
  */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
+<nav class="large-2 medium-2 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Html->link(__('Nouvel Misepied'), ['action' => 'add']) ?></li>
     </ul>
 </nav>
-<div class="misepieds index large-9 medium-8 columns content">
+<div class="misepieds index large-10 medium-10 columns content">
     <h3><?= __('Misepieds') ?></h3>
     <table cellpadding="0" cellspacing="0">
         <thead>
@@ -18,9 +18,7 @@
                 <th scope="col"><?= $this->Paginator->sort('id','No') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('matricule') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('montant') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('motif') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('created') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('modified') ?></th>
+
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
         </thead>
@@ -30,13 +28,11 @@
                 <td><?= $this->Number->format($misepied->id) ?></td>
                 <td><?= $this->Number->format($misepied->matricule) ?></td>
                 <td><?= $this->Number->format($misepied->montant) ?></td>
-                <td><?= h($misepied->motif) ?></td>
-                <td><?= h($misepied->created) ?></td>
-                <td><?= h($misepied->modified) ?></td>
+    
                 <td class="actions">
-                    <?= $this->Html->link(__('View'), ['action' => 'view', $misepied->id]) ?>
-                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $misepied->id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $misepied->id], ['confirm' => __('Are you sure you want to delete # {0}?', $misepied->id)]) ?>
+                    <?= $this->Html->link(__('Afficher'), ['action' => 'view', $misepied->id]) ?>
+                    <?= $this->Html->link(__('Modifier'), ['action' => 'edit', $misepied->id]) ?>
+                    <?= $this->Form->postLink(__('Supprimer'), ['action' => 'delete', $misepied->id], ['confirm' => __('Are you sure you want to delete # {0}?', $misepied->id)]) ?>
                 </td>
             </tr>
             <?php endforeach; ?>

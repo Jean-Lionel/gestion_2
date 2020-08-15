@@ -13,7 +13,7 @@
     </ul>
 </nav>
 <div class="ancienetes index large-9 medium-8 columns content">
-    <h3><?= __('Categorie des  ancienneté') ?></h3>
+    <h3><?= __('Categorie des  anciennetés') ?></h3>
     <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>

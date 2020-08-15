@@ -16,6 +16,9 @@
 </nav>
 <div class="assurances form large-10 medium-9 columns content">
    <div class="columns medium-6">
+    <form action="" method="get" class="columns medium-12">
+        <input type="text" name="keyWord" value="<?= $this->request->query('keyWord')?>" class="form-control" placeholder="Tapez votre rechercher ici">
+    </form>
        <?= $this->Form->create($assurance) ?>
        <fieldset>
            <legend><?= __('Ajouter une Assurance') ?></legend>

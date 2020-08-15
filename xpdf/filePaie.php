@@ -1,5 +1,5 @@
 <?php 
-header('Content-type:application/json');
+//header('Content-type:application/json');
 
 require_once('./config/getDate.php');
 require_once('./config/calcule.php');

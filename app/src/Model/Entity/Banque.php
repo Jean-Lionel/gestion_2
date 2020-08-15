@@ -29,7 +29,7 @@ class Banque extends Entity
      */
     protected $_accessible = [
         'name' => true,
-        'description' => true,
+        // 'description' => true,
         'assurances' => true,
         'avances' => true,
         'employes' => true,

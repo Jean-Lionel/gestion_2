@@ -17,7 +17,7 @@
 <div class="employesConges form large-9 medium-8 columns content">
     <?= $this->Form->create($employesConge) ?>
     <fieldset>
-        <legend><?= __('Attribuer Conge a Employes') ?></legend>
+        <legend><?= __('Donner un congé') ?></legend>
         <?php
             echo $this->Form->control('employe_id', ['options' => $employes]);
             echo $this->Form->control('conge_id', ['options' => $conges]);

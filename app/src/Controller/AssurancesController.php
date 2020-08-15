@@ -64,6 +64,21 @@ class AssurancesController extends AppController
         }
         $variables = $this->Assurances->Variables->find('list', ['limit' => 200]);
        $fonctions = $this->Assurances->Fonctions->find('list', ['limit' => 200]);
+
+        $keyWord = $this->request->query('keyWord');
+         
+
+         if($keyWord ){
+            $variables = $this->Assurances->Variables->find('list', [
+                    'conditions' => ['Variables.name LIKE '=> '%'.$keyWord.'%'],
+                    'order' => ['Variables.name'=> 'ASC'],
+
+                    'limit' => 5]);
+         }
+
+
+
+
         $this->set(compact('assurance', 'variables', 'fonctions'));
     }
 

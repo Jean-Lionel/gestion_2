@@ -187,9 +187,19 @@ class EmployesController extends AppController
     public function retraites(){
 
        $connection = ConnectionManager::get('default');
-        
+         $keyWord = $this->request->query('keyWord');
+         $champ = $this->request->query('champ');
+        $employesData = $connection->execute('select matricule,nom,prenom,dateNaissance From employes')->fetchAll('assoc');
 
-       $employesData = $connection->execute('select matricule,nom,prenom,dateNaissance From employes')->fetchAll('assoc');
+         if($keyWord ){
+
+
+             $employesData = $connection->execute('select matricule,nom,prenom,dateNaissance From employes WHERE '.$champ." LIKE '%". $keyWord."%'")->fetchAll('assoc');
+            
+         }
+
+
+     
 
        $employes = [];
 

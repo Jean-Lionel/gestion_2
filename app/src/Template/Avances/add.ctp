@@ -12,7 +12,12 @@
         <li><?= $this->Html->link(__('Nouvel Variable'), ['controller' => 'Variables', 'action' => 'add']) ?></li>
     </ul>
 </nav>
+
 <div class="avances form large-9 medium-8 columns content">
+    <form action="" method="get" class="columns medium-12">
+        <input type="text" name="keyWord" value="<?= $this->request->query('keyWord')?>" class="form-control" placeholder="Tapez votre rechercher ici">
+    </form>
+
     <?= $this->Form->create($avance) ?>
     <fieldset>
         <legend class="text-center"><?= __('Nouvel Avance') ?></legend>

@@ -460,3 +460,45 @@ function verifier_heure_regle()
 
 //Function Iness Trimestrielle
 
+
+
+
+//Function de regularisation
+
+//Return new employer valuer
+
+
+function regulariser_employe($tables_values,$matricule,$number_multiplier = 1, array $options = [])
+{
+	//array_search(needle, haystack)
+
+	$array_matricule = array_column($tables_values, 'matricule');
+
+	$table_id = array_search( $matricule, $array_matricule);
+
+	$toute_colonne = [];
+	if($table_id !== false){
+		$toute_colonne = $tables_values[$table_id];
+
+		//affiche($toute_colonne);
+
+		foreach ($options as $colomn) {
+			$toute_colonne[$colomn] = $toute_colonne[$colomn] * $number_multiplier;
+		}
+
+		//On modifier la valeur de la colonne qu'on n'a trouver
+
+		$tables_values[$table_id] = $toute_colonne;
+
+	}
+
+// 	echo "================================";
+
+// 	affiche($toute_colonne);
+
+
+// die();
+
+	return $tables_values;
+}
+

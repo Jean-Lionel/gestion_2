@@ -155,7 +155,7 @@
                         $message = $this->Html->image('icon/add.png').'Active';
                         
                     }else{
-                       $message = $this->Html->image('icon/desable.png').'Desactive'; 
+                       $message = $this->Html->image('icon/desable.png').'Désactive'; 
                     }
 
                     echo   $this->Form->postLink(__( $message), ['action' => 'desable', $employe->id], ['confirm' => __('êtes-vous sur de desactive # {0}?', $employe->id),'escape'=>false]); 

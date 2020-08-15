@@ -1,5 +1,8 @@
 <?php 
 //header('Content-Type: application/json');
+
+
+
 require_once('./config/getDate.php');
 require_once('./config/calcule.php');
 require_once('./config/history_function.php');
@@ -20,7 +23,7 @@ if($periodeGet == $current_date)
 }
 
 
-
+// $employes = regulariser_employe( $employes, "404",3, ['base_ipr','ipr']);
 
 ob_start();
 ?>

@@ -26,9 +26,9 @@
                 <td><?= h($service->created) ?></td>
                 <td><?= h($service->modified) ?></td>
                 <td class="actions">
-                    <?= $this->Html->link(__('View'), ['action' => 'view', $service->id]) ?>
-                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $service->id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $service->id], ['confirm' => __('Voulez vous vraiment supprimer # {0}?', $service->id)]) ?>
+                    <?= $this->Html->link(__('Afficher'), ['action' => 'view', $service->id]) ?>
+                    <?= $this->Html->link(__('Modifier'), ['action' => 'edit', $service->id]) ?>
+                    <?= $this->Form->postLink(__('Supprimer'), ['action' => 'delete', $service->id], ['confirm' => __('Voulez vous vraiment supprimer # {0}?', $service->id)]) ?>
                 </td>
             </tr>
             <?php endforeach; ?>

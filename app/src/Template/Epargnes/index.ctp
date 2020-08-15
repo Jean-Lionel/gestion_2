@@ -44,9 +44,9 @@
                 <td><?= $epargne->has('variable') ? $this->Html->link($epargne->variable->name, ['controller' => 'Variables', 'action' => 'view', $epargne->variable->id]) : '' ?></td>
                
                 <td class="actions">
-                    <?= $this->Html->link(__('View'), ['action' => 'view', $epargne->id]) ?>
-                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $epargne->id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $epargne->id], ['confirm' => __('Are you sure you want to delete # {0}?', $epargne->id)]) ?>
+                    <?= $this->Html->link(__('Afficher'), ['action' => 'view', $epargne->id]) ?>
+                    <?= $this->Html->link(__('Modifier'), ['action' => 'edit', $epargne->id]) ?>
+                    <?= $this->Form->postLink(__('Supprimer'), ['action' => 'delete', $epargne->id], ['confirm' => __('Are you sure you want to delete # {0}?', $epargne->id)]) ?>
                 </td>
             </tr>
             <?php endforeach; ?>

@@ -13,6 +13,9 @@
     </ul>
 </nav>
 <div class="epargnes form large-9 medium-8 columns content">
+    <form action="" method="get" class="columns medium-12">
+        <input type="text" name="keyWord" value="<?= $this->request->query('keyWord')?>" class="form-control" placeholder="Tapez votre rechercher ici">
+    </form>
     <?=$this->Form->create($epargne)?>
     <fieldset>
         <legend class="text-center"><?=__('Nouvel Epargne')?></legend>

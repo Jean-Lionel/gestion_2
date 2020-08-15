@@ -34,9 +34,9 @@
                 <td><?= h($retraite->created) ?></td>
                 <td><?= h($retraite->modified) ?></td>
                 <td class="actions">
-                    <?= $this->Html->link(__('View'), ['action' => 'view', $retraite->id]) ?>
-                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $retraite->id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $retraite->id], ['confirm' => __('Voulez vous vraiment supprimer # {0}?', $retraite->id)]) ?>
+                    <?= $this->Html->link(__('Afficher'), ['action' => 'view', $retraite->id]) ?>
+                    <?= $this->Html->link(__('Modifier'), ['action' => 'edit', $retraite->id]) ?>
+                    <?= $this->Form->postLink(__('Supprimer'), ['action' => 'delete', $retraite->id], ['confirm' => __('Voulez vous vraiment supprimer # {0}?', $retraite->id)]) ?>
                 </td>
             </tr>
             <?php endforeach; ?>

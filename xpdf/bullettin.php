@@ -1,4 +1,5 @@
 <?php
+
 require_once('./config/getDate.php');
 require_once('./config/calcule.php');
 
@@ -11,6 +12,10 @@ $employe =  find_employe_by_matricule($employes, $matricule);
 // echo "</pre>";
 
 // die();
+
+// Si le numero matricule vaut 424 alors tout ces coordonne so mulplie par deux 
+
+
 
 if($employe == null){
 	header('Location: ../app/menus');
@@ -253,10 +258,6 @@ ob_start();
 			</td>
 		</tr>
 
-		<tr>
-			<td>CONTRIBUTION AUX ELECTION</td>
-			<td>0</td>
-		</tr>
 	</tbody>
 </table>
 
