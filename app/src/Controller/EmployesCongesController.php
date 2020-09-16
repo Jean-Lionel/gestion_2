@@ -22,6 +22,15 @@ class EmployesCongesController extends AppController
         $this->paginate = [
             'contain' => ['Employes', 'Conges'],
         ];
+
+        $matricule = $this->request->query('matricule');
+
+        if($matricule){
+        $this->paginate = [
+                    'contain' => ['Employes', 'Conges'],
+                    'conditions' => ['Employes.matricule' => $matricule],
+                ];
+        }
         $employesConges = $this->paginate($this->EmployesConges);
 
         $this->set(compact('employesConges'));
@@ -62,6 +71,18 @@ class EmployesCongesController extends AppController
         }
         $employes = $this->EmployesConges->Employes->find('list', ['limit' => 200]);
         $conges = $this->EmployesConges->Conges->find('list', ['limit' => 200]);
+
+        $matricule = $this->request->query('matricule');
+
+
+        if(!empty($matricule)){
+           
+            $employes = $this->EmployesConges->Employes->find('list', [
+                'conditions' => ['Employes.matricule' => $matricule],
+
+                'limit' => 1]);
+
+        }
         $this->set(compact('employesConge', 'employes', 'conges'));
     }
 

@@ -1,6 +1,12 @@
-"nom": "ZUBERI",
-"prenom": "OMER",
-"matricule_inss": "03000711Y",
-"nbre_mois": "1",
-"base_pension_employeur": "450000",
-"base_risque_employeur": "80000"
+  ["Date"]=>
+  string(10) "2020-05-28"
+  ["ID Number"]=>
+  string(1) "1"
+  ["Name"]=>
+  string(8) "INFO-TEL"
+  ["Time"]=>
+  string(8) "17:29:04"
+  ["Status"]=>
+  string(2) "IN"
+  ["Verification"]=>
+  string(6) "Finger"

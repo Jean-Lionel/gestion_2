@@ -4,7 +4,7 @@
  * @var \App\Model\Entity\Avance[]|\Cake\Collection\CollectionInterface $avances
  */
 ?>
-<nav class="large-2 medium-2 columns" id="actions-sidebar">
+<nav class="large-1 medium-1 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Html->link(__('Nouvel Avance'), ['action' => 'add']) ?></li>
@@ -12,7 +12,7 @@
         <li><?= $this->Html->link(__('Nouvel Variable'), ['controller' => 'Variables', 'action' => 'add']) ?></li>
     </ul>
 </nav>
-<div class="avances index large-10 medium-10 columns content">
+<div class="avances index large-11 medium-11 columns content">
     
     <div class="columns medium-6">
         <h3><?= __('Avances') ?></h3>
@@ -30,12 +30,12 @@
                 <th scope="col"><?= $this->Paginator->sort('id','No') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('matricule') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('variable_id') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('montant_moi') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('montant_moi','Montant par Mois') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('montant') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('periode') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('date_avance') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('date_fin') ?></th>
-                <th scope="col" class="actions"><?= __('Actions') ?></th>
+                <th scope="col" class="actions" colspan="2"><?= __('Actions') ?></th>
             </tr>
         </thead>
         <tbody>
@@ -50,7 +50,7 @@
                 <td><?= $this->Number->format($avance->periode) ?></td>
                 <td><?= h($avance->date_avance) ?></td>
                 <td><?= h($avance->date_fin) ?></td>
-                <td class="actions">
+                <td class="actions" colspan="2">
                     <?= $this->Html->link(__('Afficher'), ['action' => 'view', $avance->id]) ?>
                     <?= $this->Html->link(__('Modifier'), ['action' => 'edit', $avance->id]) ?>
                     <?= $this->Form->postLink(__('Supprimer'), ['action' => 'delete', $avance->id], ['confirm' => __('Are you sure you want to delete # {0}?', $avance->id)]) ?>

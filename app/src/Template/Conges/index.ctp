@@ -4,13 +4,13 @@
  * @var \App\Model\Entity\Conge[]|\Cake\Collection\CollectionInterface $conges
  */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
+<nav class="large-2 medium-2 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Html->link(__('Nouvel Conge'), ['action' => 'add']) ?></li>
     </ul>
 </nav>
-<div class="conges index large-9 medium-8 columns content">
+<div class="conges index large-10 medium-10 columns content">
     <h3><?= __('Liste des conges') ?></h3>
     <table cellpadding="0" cellspacing="0">
         <thead>
@@ -20,7 +20,7 @@
                 <th scope="col"><?= $this->Paginator->sort('nbre_jour') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('created') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('modified') ?></th>
-                <th scope="col" class="actions"><?= __('Actions') ?></th>
+                <th scope="col" class="actions" colspan="2"><?= __('Actions') ?></th>
             </tr>
         </thead>
         <tbody>
@@ -31,8 +31,8 @@
                 <td><?= $this->Number->format($conge->nbre_jour) ?></td>
                 <td><?= h($conge->created) ?></td>
                 <td><?= h($conge->modified) ?></td>
-                <td class="actions">
-                    <?= $this->Html->link(__('Afficher'), ['action' => 'view', $conge->id]) ?>
+                <td class="actions" colspan="2">
+                  <!--   <?= $this->Html->link(__('Afficher'), ['action' => 'view', $conge->id]) ?> -->
                     <?= $this->Html->link(__('Modifier'), ['action' => 'edit', $conge->id]) ?>
                     <?= $this->Form->postLink(__('Supprimer'), ['action' => 'delete', $conge->id], ['confirm' => __('Are you sure you want to delete # {0}?', $conge->id)]) ?>
                 </td>

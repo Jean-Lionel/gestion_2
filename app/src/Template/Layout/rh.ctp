@@ -85,6 +85,22 @@
                    ) ?>
                </li>
 
+               
+                <li>
+                     <?php echo $this->Html->link('congé'.
+                        $this->Html->image('icon/library.png')
+                        ,['controller'=>'EmployesConges','action'=>'index'],
+                        ['escape'=> false]
+                 ) ?>
+                </li>
+                 <li>
+                     <?= $this->Html->link('Planing des congés',['controller'=>'Planing-Conges','action'=>'index']) ?>
+                </li>
+
+                 <li>
+                     <?= $this->Html->link('Présance',['controller'=>'ZktecoPresance','action'=>'index']) ?>
+                </li>
+
 
                <li>
                    <?php echo $this->Html->link('Mise à pied'.

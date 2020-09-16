@@ -41,7 +41,7 @@ class EmployesTable extends Table
         parent::initialize($config);
 
         $this->setTable('employes');
-        $this->setDisplayField('id');
+        $this->setDisplayField('fullName');
         $this->setPrimaryKey('id');
 
         $this->addBehavior('Timestamp');
@@ -149,6 +149,9 @@ class EmployesTable extends Table
             ->notEmptyString('salaireBase');
 
         $validator
+            ->numeric('nbre_jour');
+
+        $validator
             ->scalar('compte')
             ->maxLength('compte', 255)
             ->requirePresence('compte', 'create')
@@ -169,6 +172,9 @@ class EmployesTable extends Table
      * @param \Cake\ORM\RulesChecker $rules The rules object to be modified.
      * @return \Cake\ORM\RulesChecker
      */
+
+   
+
     public function buildRules(RulesChecker $rules)
     {
         //$rules->add($rules->isUnique(['email']));
@@ -182,4 +188,7 @@ class EmployesTable extends Table
 
         return $rules;
     }
+
+
+    
 }

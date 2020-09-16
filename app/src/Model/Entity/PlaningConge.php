@@ -4,20 +4,23 @@ namespace App\Model\Entity;
 use Cake\ORM\Entity;
 
 /**
- * EmployesConge Entity
+ * PlaningConge Entity
  *
  * @property int $id
  * @property int $employe_id
- * @property int $conge_id
- * @property \Cake\I18n\FrozenDate $debut_conges
- * @property \Cake\I18n\FrozenDate $fin_conge
+ * @property int $nbre_jour_total
+ * @property \Cake\I18n\FrozenDate $debut_conge_1
+ * @property int $nbre_jour_1
+ * @property \Cake\I18n\FrozenDate $fin_conge_1
+ * @property \Cake\I18n\FrozenDate $debut_conge_2
+ * @property int $nbre_jour_2
+ * @property \Cake\I18n\FrozenDate $fin_conge_2
  * @property \Cake\I18n\FrozenTime $created
  * @property \Cake\I18n\FrozenTime $modified
  *
  * @property \App\Model\Entity\Employe $employe
- * @property \App\Model\Entity\Conge $conge
  */
-class EmployesConge extends Entity
+class PlaningConge extends Entity
 {
     /**
      * Fields that can be mass assigned using newEntity() or patchEntity().
@@ -30,14 +33,15 @@ class EmployesConge extends Entity
      */
     protected $_accessible = [
         'employe_id' => true,
-        'conge_id' => true,
-        'debut_conges' => true,
-        'fin_conge' => true,
+        'nbre_jour_total' => true,
+        'debut_conge_1' => true,
+        'nbre_jour_1' => true,
+        'fin_conge_1' => true,
+        'debut_conge_2' => true,
+        'nbre_jour_2' => true,
+        'fin_conge_2' => true,
         'created' => true,
         'modified' => true,
         'employe' => true,
-        'conge' => true,
-        'date_retour' => true,
-        'nbre_jour'=> true
     ];
 }

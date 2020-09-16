@@ -29,6 +29,7 @@
             echo $this->Form->control('conge_id', ['options' => $conges]);
             echo $this->Form->control('debut_conges');
             echo $this->Form->control('fin_conge');
+            echo $this->Form->control('date_retour');
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

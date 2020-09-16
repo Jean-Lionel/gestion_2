@@ -82,4 +82,11 @@ class Employe extends Entity
         'banque' => true,
         'cotations' => true,
     ];
+
+    protected function _getFullName()
+    {
+        return
+            $this->_properties['nom'].' '.
+            $this->_properties['prenom'];
+    }
 }

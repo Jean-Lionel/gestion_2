@@ -3,12 +3,12 @@
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Html->link(__('Nouvel  Fonction'), ['action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('Listes des  Employes'), ['controller' => 'Employes', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('Nouvl Employe'), ['controller' => 'Employes', 'action' => 'add']) ?></li>
+       <!-- <li><?= $this->Html->link(__('Listes des  Employes'), ['controller' => 'Employes', 'action' => 'index']) ?></li>
+         <li><?= $this->Html->link(__('Nouvl Employe'), ['controller' => 'Employes', 'action' => 'add']) ?></li>
         <li><?= $this->Html->link(__('Listes des  Assurances'), ['controller' => 'Assurances', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('Nouvel  Assurance'), ['controller' => 'Assurances', 'action' => 'add']) ?></li>
         <li><?= $this->Html->link(__('Listes des  Indeminites'), ['controller' => 'Indeminites', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('Nouvel Indeminite'), ['controller' => 'Indeminites', 'action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('Nouvel Indeminite'), ['controller' => 'Indeminites', 'action' => 'add']) ?></li> -->
     </ul>
 </nav>
 <div class="fonctions index large-9 medium-8 columns content">

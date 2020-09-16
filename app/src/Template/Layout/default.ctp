@@ -18,6 +18,12 @@
     <?= $this->Html->script('jquery.js') ?>
 
     <?= $this->fetch('script') ?>
+
+    <style>
+        .top-bar-section li img{
+            width: 25px;
+        }
+    </style>
 </head>
 <body id="body-content">
     <nav class="top-bar expanded" data-topbar role="navigation">
@@ -147,6 +153,13 @@
                         ,['controller'=>'EmployesConges','action'=>'index'],
                         ['escape'=> false]
                  ) ?>
+                </li>
+                 <li>
+                     <?= $this->Html->link('Planing des congés',['controller'=>'Planing-Conges','action'=>'index']) ?>
+                </li>
+
+                 <li>
+                     <?= $this->Html->link('Présance',['controller'=>'ZktecoPresance','action'=>'index']) ?>
                 </li>
 
 

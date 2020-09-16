@@ -8,6 +8,12 @@ require_once('./config/history_function.php');
 if($periodeGet == $current_date)
 {
     $resultat = ordreVirement($employes);
+
+    // affiche( $resultat[0]);
+    // die();
+
+    $resultat = regulariser_employe($resultat,'424',2,['montant']);
+
 	save_or_update_ordre_virement($resultat);
 
 }else{
@@ -133,8 +139,8 @@ ob_start();
 			<tr>
 				<td style="width: 70%;">
 
-					<b>LE DIRECTEUR ADMINISTRATIF ET FINANCIER</b> <br><br>
-					<b>MANIRAKIZA Francine </b>
+					<b>LE DIRECTEUR ADMINISTRATIF ET FINANCIER a.i</b> <br><br>
+					<b>BIGIRIMANA Aline </b>
 					
 				</td>
 				<td style="width: 30%;">
@@ -161,7 +167,7 @@ ob_start();
 <?php 
 $content = ob_get_clean();
 
-//die($content);
+
 
 //require_once dirname()'html2Pdf/vendor/autoload.php';
 

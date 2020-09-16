@@ -112,7 +112,11 @@ foreach ($employes as $key => $employe) {
 
     if(!$reussi){
 
-        return false;
+        var_dump($reussi);
+
+        
+
+       // return false;
     }
 
 }
@@ -517,6 +521,7 @@ function ordreVirement($employes_table_paiement = array()){
         $employe['prenom'] = $data['prenom'];
         $employe['banque_name'] = $data['banque_name'];
         $employe['banque_id'] = $data['banque_id'];
+        $employe['matricule'] = $data['matricule'];
         $employe['montant'] = net_a_payer($employes_table_paiement, $data['matricule']);
 
         $employes_ordre_virement[] = $employe;
@@ -725,7 +730,7 @@ function get_retenu_credits($matricule , $periode){
  $db = connexion();
 
  $q = "SELECT SUM(montant_Moi) as montant_total, variable_id FROM credits WHERE 
- matricule =". $matricule." AND date_fin >= '".$dateActuel."' AND date_credit <= '".$dateActuel."' GROUP BY variable_id";
+ matricule =". $matricule." AND date_fin > '".$dateActuel."' AND date_credit <= '".$dateActuel."' GROUP BY variable_id";
 
  $request = $db->query($q);
 

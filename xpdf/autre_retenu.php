@@ -10,6 +10,12 @@ if($periodeGet == $current_date)
 {
 	$result = get_file_autre_retenues($employes);
 
+	$result = regulariser_employe($result,'424',2,['montant']);
+
+	// affiche($result[0]);
+
+	// die();
+
 	save_or_update_autre_retenu($result);
 
 }else{
@@ -122,8 +128,8 @@ ob_start();
 				<tr>
 					<td style="width: 70%;">
 
-						<b>LE DIRECTEUR ADMINISTRATIF ET FINANCIER</b> <br><br>
-						<b>MANIRAKIZA Francine </b>
+						<b>LE DIRECTEUR ADMINISTRATIF ET FINANCIER a.i</b> <br><br>
+						<b>BIGIRIMANA Aline </b>
 
 					</td>
 					<td style="width: 30%;">

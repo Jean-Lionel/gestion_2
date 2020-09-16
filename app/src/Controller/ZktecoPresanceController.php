@@ -2,6 +2,7 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+use Cake\Datasource\ConnectionManager;
 
 /**
  * ZktecoPresance Controller
@@ -12,6 +13,10 @@ use App\Controller\AppController;
  */
 class ZktecoPresanceController extends AppController
 {
+    public function initialize(){
+        parent::initialize();
+        $this->loadModel('ZktecoUsers');
+    }
     /**
      * Index method
      *
@@ -19,7 +24,15 @@ class ZktecoPresanceController extends AppController
      */
     public function index()
     {
-        $zktecoPresance = $this->paginate($this->ZktecoPresance);
+        $zktecoPresance = $this->paginate($this->ZktecoPresance,['order' => ['date_day' => 'DESC', 'LIMIT'=>200]]);
+
+        $nom = $this->request->query('nom');
+
+        if($nom){
+            $zktecoPresance = $this->paginate($this->ZktecoPresance,[
+                'conditions'=>['name LIKE' => '%'.$nom.'%'],
+                'order' => ['date_day' => 'DESC', 'LIMIT'=>20]]);
+        }
 
         $this->set(compact('zktecoPresance'));
     }
@@ -103,4 +116,99 @@ class ZktecoPresanceController extends AppController
 
         return $this->redirect(['action' => 'index']);
     }
+
+
+
+    // id_number`, `uid`, `date_day`, `day_time`, `name`, `Status`, `Verification`
+
+
+    // TO DO in the nigth 16th Agust 2020
+
+     public function userlogs(){
+
+
+      $datas = $this->request->getData();
+
+      
+
+      foreach ($datas['data'] as $data) {
+        # code...
+        if(is_array($data)){
+          foreach ($data as $user) {
+
+           
+
+           $zktecoUser = $this->ZktecoPresance->newEntity();
+           $zktecoUser = $this->ZktecoPresance->patchEntity($zktecoUser, [
+
+            'id_number' => $user['ID Number'],
+            'name' => $user['Name'],
+            'day_time' => $user['Time'],
+            'date_day' => $user['Date'],
+            'Status' => $user['Status'],
+            'Verification' => $user['Verification'],
+          ]);
+
+
+           $check_user_exist = $this->ZktecoPresance->find('list',['conditions' => [
+            'id_number' => $user['ID Number'],
+            'date_day' => $user['Date'],
+            'day_time' => $user['Time']
+          ]]);
+
+           
+           if($check_user_exist->count() === 0){
+             if(!$this->ZktecoPresance->save($zktecoUser));
+             echo "Error";
+
+           }
+           
+         }
+       }else{
+         $zktecoUser = $this->ZktecoPresance->newEntity();
+       }
+     }
+
+     return $this->redirect(['action' => 'index']);
+
+   }
+
+   public function rapport()
+   {
+
+    // Rechercher la semaine par defaut
+
+    $get_date = $this->request->query('edate');
+
+    $semaine = $this->Myfonction->check_curent_week($get_date);
+
+    // dd($semaine);
+
+    // "monday" => "2020-08-31"
+    // "freeday" => "2020-09-04"
+
+    $monday = $semaine['monday'];
+    $freeday = $semaine['sunday'];
+
+    // dd($semaine);
+
+    $connection = ConnectionManager::get('default');
+
+    $users = $this->ZktecoUsers->find('all',['fields'=>['id_number','name']]);
+
+    $rapports =  [];
+
+    foreach ($users as $key => $value) {
+
+    $result = $connection->execute('SELECT COUNT(DISTINCT date_day) as nbre_jour FROM zkteco_presance WHERE id_number='.$value->id_number.' and date_day BETWEEN "'. $monday.'" and "'.$freeday.'"')->fetchAll('assoc');
+
+        $value['presence'] = $result[0]['nbre_jour'];
+
+        $rapports[] = $value;
+    }
+
+
+    $this->set(compact('rapports'));
+       
+   }
 }

@@ -4,19 +4,19 @@
  * @var \App\Model\Entity\Ajustement[]|\Cake\Collection\CollectionInterface $ajustements
  */
 ?>
-<nav class="large-2 medium-2 columns" id="actions-sidebar">
+<nav class="large-1 medium-1 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Html->link(__('Nouvel Ajustement'), ['action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('Listes des Ancienetes'), ['controller' => 'Ancienetes', 'action' => 'index']) ?></li>
+ <!--        <li><?= $this->Html->link(__('Listes des Ancienetes'), ['controller' => 'Ancienetes', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('Nouvel Ancienete'), ['controller' => 'Ancienetes', 'action' => 'add']) ?></li>
         <li><?= $this->Html->link(__('Listes des Categories'), ['controller' => 'Categories', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('Nouvel Category'), ['controller' => 'Categories', 'action' => 'add']) ?></li>
         <li><?= $this->Html->link(__('Listes des Indeminites'), ['controller' => 'Indeminites', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('Nouvel Indeminite'), ['controller' => 'Indeminites', 'action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('Nouvel Indeminite'), ['controller' => 'Indeminites', 'action' => 'add']) ?></li> -->
     </ul>
 </nav>
-<div class="ajustements index large-10 medium-10 columns content">
+<div class="ajustements index large-11 medium-11 columns content">
     <h3><?= __('Ajustements') ?></h3>
     <table table table-responsive>
         <thead>
@@ -27,7 +27,7 @@
                 <th scope="col"><?= $this->Paginator->sort('prafond') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('montant') ?></th>
             
-                <th scope="col" class="actions"><?= __('Actions') ?></th>
+                <th scope="col" class="actions" colspan="2"><?= __('Actions') ?></th>
             </tr>
         </thead>
         <tbody>
@@ -39,7 +39,7 @@
                 <td><?= $this->Number->format($ajustement->prafond) ?></td>
                 <td><?= $this->Number->format($ajustement->montant) ?></td>
 
-                <td class="actions">
+                <td class="actions" colspan="2">
                     <?= $this->Html->link(__('Affiche'), ['action' => 'view', $ajustement->id]) ?>
                     <?= $this->Html->link(__('Modifier'), ['action' => 'edit', $ajustement->id]) ?>
                     <?= $this->Form->postLink(__('Supprimer'), ['action' => 'delete', $ajustement->id], ['confirm' => __('Are you sure you want to delete # {0}?', $ajustement->id)]) ?>

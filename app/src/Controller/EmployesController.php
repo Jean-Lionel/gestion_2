@@ -21,7 +21,13 @@ class EmployesController extends AppController
     public function index()
     {
 
-        
+       // $val =  $this->Myfonction->check_curent_week('2020-08-19');
+
+       // debug($val);
+
+       //  die()
+
+        $user_role = $this->Auth->user('role');
 
         $keyWord = $this->request->query('keyWord');
         $champ = $this->request->query('champ');
@@ -48,7 +54,7 @@ class EmployesController extends AppController
         //];
             $employes = $this->paginate($this->Employes);
 
-            $this->set(compact('employes'));
+            $this->set(compact('employes','user_role'));
         }
 
     /**
@@ -194,14 +200,14 @@ class EmployesController extends AppController
          if($keyWord ){
 
 
-             $employesData = $connection->execute('select matricule,nom,prenom,dateNaissance From employes WHERE '.$champ." LIKE '%". $keyWord."%'")->fetchAll('assoc');
+             $employesData = $connection->execute('select matricule,nom,prenom,dateNaissance From employes WHERE '.$champ." LIKE '%". $keyWord."%'  ORDER BY dateNaissance DESC")->fetchAll('assoc');
             
          }
 
 
-     
-
        $employes = [];
+
+       $employes_anne_restant = [];
 
        foreach ($employesData as $key => $value) {
           $infoRetraites = $this->Myfonction->nbreAge($value['dateNaissance']);
@@ -210,12 +216,19 @@ class EmployesController extends AppController
           $employe['nbresAnne'] = $infoRetraites[0];
           $employe['anneeRestant'] = $infoRetraites[1];
 
-          $employes[] = $employe;
+          if($employe['anneeRestant'] < 2){
+            $employes_anne_restant[] = $employe;
+          }else{
+            $employes[] = $employe;
+          }
+
+ 
        }
 
        $employes = (object)  $employes;
+
        
-        $this->set(compact('employes'));
+        $this->set(compact('employes','employes_anne_restant'));
 
     }
 }

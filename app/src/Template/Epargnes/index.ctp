@@ -31,7 +31,7 @@
                 <th scope="col"><?= $this->Paginator->sort('montant') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('periode',"Periode d' epargne") ?></th>
                 <th scope="col"><?= $this->Paginator->sort('Variable') ?></th>
-                <th scope="col" class="actions"><?= __('Actions') ?></th>
+                <th scope="col" class="actions" colspan="2"><?= __('Actions') ?></th>
             </tr>
         </thead>
         <tbody>
@@ -43,7 +43,7 @@
                 <td><?= h($epargne->periode) ?></td>
                 <td><?= $epargne->has('variable') ? $this->Html->link($epargne->variable->name, ['controller' => 'Variables', 'action' => 'view', $epargne->variable->id]) : '' ?></td>
                
-                <td class="actions">
+                <td class="actions" colspan="2">
                     <?= $this->Html->link(__('Afficher'), ['action' => 'view', $epargne->id]) ?>
                     <?= $this->Html->link(__('Modifier'), ['action' => 'edit', $epargne->id]) ?>
                     <?= $this->Form->postLink(__('Supprimer'), ['action' => 'delete', $epargne->id], ['confirm' => __('Are you sure you want to delete # {0}?', $epargne->id)]) ?>

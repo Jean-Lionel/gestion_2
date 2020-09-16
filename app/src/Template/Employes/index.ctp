@@ -3,17 +3,22 @@
  * @var \App\View\AppView $this
  * @var \App\Model\Entity\Employe[]|\Cake\Collection\CollectionInterface $employes
  */
+
+// dd();
 ?>
+
 
 <style>
     .actions img{
-        width: 25px;
+        width: 15px;
     }
 </style>
-<nav class="large-2 medium-2 columns" id="actions-sidebar">
+<nav class="large-1 medium-1 columns" id="actions-sidebar">
     <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('Nouvel Employé'), ['action' => 'add']) ?></li>
+         <?php if($user_role != 'TRAITANT DU SALAIRE'): ?>
+            <li class="heading"><?= __('Actions') ?></li>
+            <li><?= $this->Html->link(__('Nouvel Employé'), ['action' => 'add']) ?></li>
+        <?php endif; ?>
       <!--   <li><?= $this->Html->link(__('List Levels'), ['controller' => 'Levels', 'action' => 'index']) ?></li>
 
         <li><?= $this->Html->link(__('List Levels'), ['controller' => 'Levels', 'action' => 'index']) ?></li> -->
@@ -32,7 +37,7 @@
         <li><?= $this->Html->link(__('New Cotation'), ['controller' => 'Cotations', 'action' => 'add']) ?></li> -->
     </ul>
 </nav>
-<div class="employes index large-10 medium-10 columns content">
+<div class="employes index large-11 medium-11 columns content">
     <div class="columns medium-6">
         <h3><?= __('LISTE DE TOUS LES EMPLOYES') ?></h3>
     </div>
@@ -67,7 +72,7 @@
             <th scope="col"><?= $this->Paginator->sort('matricule') ?></th>
             <th scope="col"><?= $this->Paginator->sort('nom') ?></th>
             <th scope="col"><?= $this->Paginator->sort('prenom') ?></th>
-            <th scope="col"><?= $this->Paginator->sort('dateNaissance','Date de naissance') ?></th>
+          <!--   <th scope="col"><?= $this->Paginator->sort('dateNaissance','Date de naissance') ?></th> -->
           
             
               <!--  
@@ -92,7 +97,10 @@
                  <th scope="col"><?= $this->Paginator->sort('etat') ?></th>
                  !-->
 
+                     <?php if($user_role != 'TRAITANT DU SALAIRE'): ?>
+
                  <th scope="col" class="actions" colspan="3"><?= __('Actions') ?></th>
+             <?php endif; ?>
              </tr>
          </thead>
          <tbody>
@@ -102,7 +110,7 @@
                     <td><?= $this->Number->format($employe->matricule) ?></td>
                     <td><?= h(strtoupper($employe->nom)) ?></td>
                     <td><?= h(ucfirst($employe->prenom)) ?></td>
-                    <td><?= h($employe->dateNaissance) ?></td>
+                 <!--    <td><?= h($employe->dateNaissance) ?></td> -->
                <!-- 
                 <td><?= h($employe->sexe) ?></td>
                 <td><?= h($employe->etatCivil) ?></td>
@@ -125,6 +133,10 @@
                 <td><?= $this->Number->format($employe->etat) ?></td>
 
                 !-->
+
+              <?php if($user_role != 'TRAITANT DU SALAIRE'): ?>
+
+                  
                 <td class="actions" colspan="3">
 
                     <style>
@@ -173,8 +185,10 @@
                  
 
 
-
                 </td>
+
+            <?php endif;?>
+              
             </tr>
         <?php endforeach; ?>
     </tbody>

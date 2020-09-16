@@ -9,6 +9,8 @@ require_once('./config/history_function.php');
 
 //  $employes = json_encode($employes);
 
+// ,
+
 // echo  $employes;
 
 //  die();
@@ -16,6 +18,23 @@ require_once('./config/history_function.php');
 if($periodeGet == $current_date)
 {
     $employes = get_FilesPaie($employes);
+
+    // affiche($employes[0]);
+    // die();
+
+    // CODE DE REGULARISATION 
+
+    $employes = regulariser_employe($employes,'424',2,[
+
+        'salaireBase', 'logement', 'ind_deplacement', 'all_familial', 'salaire_brut_sans_ajustement', 'ind_ajustement', 'prime_Fonction', 'brut1', 'pension_employe', 'mutuel_employe', 'base_ipr', 'ipr', 'total_autre_retenu', 'total_retenu', 'net_a_payer', 'pension_employeur', 'mituel_employeur_Patronal', 'total_depenses'
+
+
+    ]);
+
+    // affiche($employes);
+
+
+    // die();
 
     save_or_update_file_pay($employes);
 
@@ -207,8 +226,8 @@ ob_start();
                 </td>
                 <td style="width: 40%;">
 
-                    <b>LE DIRECTEUR ADMINISTRATIF ET FINANCIER</b> <br><br>
-                    <b>MANIRAKIZA Francine </b>
+                    <b>LE DIRECTEUR ADMINISTRATIF ET FINANCIER a.i</b> <br><br>
+                    <b>BIGIRIMANA Aline </b>
                     
                 </td>
                 <td style="width: 30%;">

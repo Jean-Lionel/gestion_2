@@ -15,12 +15,21 @@ if($periodeGet == $current_date)
 {
 	$employesData = get_file_iness($employes);
 
+	$employesData = regulariser_employe($employesData,'424',2,[
+
+		 'base_pension_employe', 'montant_pension_employe', 'base_risque_employe', 'montant_risque_employe', 'base_pension_employeur', 'montant_pension_employeur', 'base_risque_employeur', 'montant_risque_employeur', 'total'
+
+	]);
+
 	
 	save_or_update_inss_mensuel($employesData);
 
 }else{
 	$employesData =  get_historique_from('history_inss', $periodeGet);
 }
+
+
+
 
 ob_start();
 ?>
@@ -142,8 +151,8 @@ ob_start();
 	<tr>
 		<td style="width: 45%">
 
-			<p>LE DIRECTEUR ADMINISTRATIF ET FINANCIER</p>
-			<p>MANIRAKIZA Francine</p>
+			<p>LE DIRECTEUR ADMINISTRATIF ET FINANCIER a.i</p>
+			<p>BIGIRIMANA Aline</p>
 
 		</td>
 

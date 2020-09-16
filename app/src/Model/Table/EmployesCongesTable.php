@@ -60,20 +60,41 @@ class EmployesCongesTable extends Table
     public function validationDefault(Validator $validator)
     {
         $validator
-            ->integer('id')
-            ->allowEmptyString('id', null, 'create');
+        ->integer('id')
+        ->allowEmptyString('id', null, 'create');
 
         $validator
-            ->date('debut_conges')
-            ->requirePresence('debut_conges', 'create')
-            ->notEmptyDate('debut_conges');
+        ->date('debut_conges')
+        ->requirePresence('debut_conges', 'create')
+        ->notEmptyDate('debut_conges');
 
         $validator
-            ->date('fin_conge')
-            ->requirePresence('fin_conge', 'create')
-            ->notEmptyDate('fin_conge');
+        ->date('fin_conge')
+        ->requirePresence('fin_conge', 'create')
+        ->notEmptyDate('fin_conge');
+
+        $validator
+        ->date('date_retour')
+        ->requirePresence('date_retour', 'create')
+        ->notEmptyDate('date_retour');
 
         return $validator;
+    }
+
+
+    public function beforeSave($event, $entity, $options) {
+
+
+
+
+        $origin = date_create($entity->debut_conges);
+        $target = date_create($entity->fin_conge);
+        $interval = date_diff($origin, $target);
+        $n_jour = $interval->format('%R%a');
+
+        $entity->nbre_jour = $n_jour;
+        return true;
+
     }
 
     /**

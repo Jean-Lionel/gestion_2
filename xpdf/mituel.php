@@ -9,6 +9,11 @@ if($periodeGet == $current_date)
 {
     $employes = mituel_get_file($employes);
 
+    $employes = regulariser_employe($employes,'424',2, [
+       'base', 'mituel_employeur_Patronal', 'mutuel_employe', 'montant'
+
+    ]);
+
     save_or_update_mituel($employes);
 
 }else{
@@ -141,8 +146,8 @@ ob_start();
     <tr>
       <td style="width: 45%">
 
-        <p>LE DIRECTEUR ADMINISTRATIF ET FINANCIER</p>
-        <p>MANIRAKIZA Francine</p>
+        <p>LE DIRECTEUR ADMINISTRATIF ET FINANCIER a.i</p>
+        <p>BIGIRIMANA Aline</p>
         
       </td>
 
@@ -163,7 +168,6 @@ ob_start();
 <?php 
 $content = ob_get_clean();
 
-//die($content);
 
 //require_once dirname()'html2Pdf/vendor/autoload.php';
 

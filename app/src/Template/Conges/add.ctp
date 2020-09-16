@@ -15,8 +15,8 @@
     <fieldset>
         <legend><?= __('Ajouter un congée') ?></legend>
         <?php
-            echo $this->Form->control('name');
-            echo $this->Form->control('nbre_jour');
+            echo $this->Form->control('name',['label'=>'Nom']);
+            echo $this->Form->control('nbre_jour',['label'=>'Nombre de jour']);
        
         ?>
     </fieldset>

@@ -143,8 +143,8 @@ ob_start();
 			<tr>
 				<td style="width: 70%;">
 
-					<b>LE DIRECTEUR ADMINISTRATIF ET FINANCIER</b> <br><br>
-					<b>MANIRAKIZA Francine </b>
+					<b>LE DIRECTEUR ADMINISTRATIF ET FINANCIER a.i</b> <br><br>
+					<b>BIGIRIMANA Aline </b>
 					
 				</td>
 				<td style="width: 30%;">

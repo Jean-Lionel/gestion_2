@@ -22,9 +22,9 @@ class ZktecoUsersController extends AppController
         // debug(ZKTECO);
 
         // die();
-        $zktecoUsers = $this->paginate($this->ZktecoUsers);
+      $zktecoUsers = $this->paginate($this->ZktecoUsers);
 
-        $this->set(compact('zktecoUsers'));
+      $this->set(compact('zktecoUsers'));
     }
 
     /**
@@ -36,11 +36,11 @@ class ZktecoUsersController extends AppController
      */
     public function view($id = null)
     {
-        $zktecoUser = $this->ZktecoUsers->get($id, [
-            'contain' => [],
-        ]);
+      $zktecoUser = $this->ZktecoUsers->get($id, [
+        'contain' => [],
+      ]);
 
-        $this->set('zktecoUser', $zktecoUser);
+      $this->set('zktecoUser', $zktecoUser);
     }
 
     /**
@@ -50,21 +50,21 @@ class ZktecoUsersController extends AppController
      */
     public function add()
     {
-        $zktecoUser = $this->ZktecoUsers->newEntity();
-        if ($this->request->is('post')) {
-            $zktecoUser = $this->ZktecoUsers->patchEntity($zktecoUser, $this->request->getData());
+      $zktecoUser = $this->ZktecoUsers->newEntity();
+      if ($this->request->is('post')) {
+        $zktecoUser = $this->ZktecoUsers->patchEntity($zktecoUser, $this->request->getData());
 
             // debug($this->request->getData());
 
             // die();
-            if ($this->ZktecoUsers->save($zktecoUser)) {
-                $this->Flash->success(__('The zkteco user has been saved.'));
+        if ($this->ZktecoUsers->save($zktecoUser)) {
+          $this->Flash->success(__('The zkteco user has been saved.'));
 
-                return $this->redirect(['action' => 'index']);
-            }
-            $this->Flash->error(__('The zkteco user could not be saved. Please, try again.'));
+          return $this->redirect(['action' => 'index']);
         }
-        $this->set(compact('zktecoUser'));
+        $this->Flash->error(__('The zkteco user could not be saved. Please, try again.'));
+      }
+      $this->set(compact('zktecoUser'));
     }
 
     /**
@@ -76,19 +76,19 @@ class ZktecoUsersController extends AppController
      */
     public function edit($id = null)
     {
-        $zktecoUser = $this->ZktecoUsers->get($id, [
-            'contain' => [],
-        ]);
-        if ($this->request->is(['patch', 'post', 'put'])) {
-            $zktecoUser = $this->ZktecoUsers->patchEntity($zktecoUser, $this->request->getData());
-            if ($this->ZktecoUsers->save($zktecoUser)) {
-                $this->Flash->success(__('The zkteco user has been saved.'));
+      $zktecoUser = $this->ZktecoUsers->get($id, [
+        'contain' => [],
+      ]);
+      if ($this->request->is(['patch', 'post', 'put'])) {
+        $zktecoUser = $this->ZktecoUsers->patchEntity($zktecoUser, $this->request->getData());
+        if ($this->ZktecoUsers->save($zktecoUser)) {
+          $this->Flash->success(__('The zkteco user has been saved.'));
 
-                return $this->redirect(['action' => 'index']);
-            }
-            $this->Flash->error(__('The zkteco user could not be saved. Please, try again.'));
+          return $this->redirect(['action' => 'index']);
         }
-        $this->set(compact('zktecoUser'));
+        $this->Flash->error(__('The zkteco user could not be saved. Please, try again.'));
+      }
+      $this->set(compact('zktecoUser'));
     }
 
     /**
@@ -100,15 +100,15 @@ class ZktecoUsersController extends AppController
      */
     public function delete($id = null)
     {
-        $this->request->allowMethod(['post', 'delete']);
-        $zktecoUser = $this->ZktecoUsers->get($id);
-        if ($this->ZktecoUsers->delete($zktecoUser)) {
-            $this->Flash->success(__('The zkteco user has been deleted.'));
-        } else {
-            $this->Flash->error(__('The zkteco user could not be deleted. Please, try again.'));
-        }
+      $this->request->allowMethod(['post', 'delete']);
+      $zktecoUser = $this->ZktecoUsers->get($id);
+      if ($this->ZktecoUsers->delete($zktecoUser)) {
+        $this->Flash->success(__('The zkteco user has been deleted.'));
+      } else {
+        $this->Flash->error(__('The zkteco user could not be deleted. Please, try again.'));
+      }
 
-        return $this->redirect(['action' => 'index']);
+      return $this->redirect(['action' => 'index']);
     }
 
     public function save()
@@ -116,68 +116,48 @@ class ZktecoUsersController extends AppController
 
        //  die();
         $this->autoRender = false; //Avoid to render default
-       $users = $this->request->getData();
+        $users = $this->request->getData();
 
 
-       var_dump($users);
+        var_dump($users);
 
-       die();
+        die();
 
-       foreach ($users as $user) {
+        foreach ($users as $user) {
 
         // var_dump($user);
 
         // die();
 
-        $zktecoUser = $this->ZktecoUsers->newEntity();
+          $zktecoUser = $this->ZktecoUsers->newEntity();
 
-        $zktecoUser = $this->ZktecoUsers->patchEntity($zktecoUser, [
+          $zktecoUser = $this->ZktecoUsers->patchEntity($zktecoUser, [
 
             'uid' => $user['uid'],
             'id_number' => $user['ID Number'],
             'name' => $user['Name'],
             'privilege' => $user['Privilege']
-        ]);
+          ]);
 
-         $check_user_exist = $this->ZktecoUsers->find('list',['conditions' => [
+          $check_user_exist = $this->ZktecoUsers->find('list',['conditions' => [
             'id_number' => $user['ID Number']
-        ]]);
+          ]]);
 
-        
-        if($check_user_exist->count() === 0){
-             if(!$this->ZktecoUsers->save($zktecoUser));
-                echo "Error";
+          
+          if($check_user_exist->count() === 0){
+           if(!$this->ZktecoUsers->save($zktecoUser));
+           echo "Error";
 
-        }
+         }
 
-    }
+       }
 
-    echo "tout a et correct";
+       echo "tout a et correct";
 
-    return null;
-}
-
-// TO DO in the nigth 16th Agust 2020
-
-public function userlogs(){
+       return null;
+     }
 
 
-    $datas = $this->request->getData();
-
-    foreach ($datas as $data) {
-        # code...
-        if(is_array($data)){
-            foreach ($$data as $user) {
-                 $zktecoUser = $this->ZktecoUsers->newEntity();
-                
-            }
-        }else{
-               $zktecoUser = $this->ZktecoUsers->newEntity();
-        }
-    }
 
 
-}
-
-
-}
+ }

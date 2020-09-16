@@ -30,32 +30,6 @@
 
 
 
- function save_all_users_logs(){
-
-   $.ajax({
-    url: '<?= ZKTECO?>userlogs/',
-
-    type: 'GET',
-
-})
-   .done(function(data) {
-    $.ajax({
-        url: '"<?php echo $this->Url->build(['controller'=>'ZktecoUsers','action'=>'userlogs']) ?>"',
-        headers : {
-           'X-CSRF-Token': $('[name="_csrfToken"]').val()
-       },
-       type : 'POST',
-       data : {data}
-   }).done(function(response){
-    console.log(response);
-})
-})
-   .fail(function() {
-    console.log("error");
-})
-
-}
-
 
 
 function save_all_users(){
@@ -87,7 +61,8 @@ function save_all_users(){
 
 
 }
-
 save_all_users();
+
+
 
 </script>

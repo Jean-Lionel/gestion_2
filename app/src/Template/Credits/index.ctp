@@ -4,15 +4,15 @@
 * @var \App\Model\Entity\Credit[]|\Cake\Collection\CollectionInterface $credits
 */
 ?>
-<nav class="large-2 medium-2 columns" id="actions-sidebar">
+<nav class="large-1 medium-1 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Html->link(__('Nouvel Credit'), ['action' => 'add']) ?></li>
         <li><?= $this->Html->link(__('Listes des Variables'), ['controller' => 'Variables', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Variable'), ['controller' => 'Variables', 'action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('Nouvel Variable'), ['controller' => 'Variables', 'action' => 'add']) ?></li>
     </ul>
 </nav>
-<div class="credits index large-10 medium-10 columns content">
+<div class="credits index large-11 medium-11 columns content">
     <div class="medium-6 columns">
         <h3><?= __('Liste des Credits') ?></h3>
     </div>
@@ -36,7 +36,7 @@
 
                     <th scope="col"><?= $this->Paginator->sort('date_credit') ?></th>
                     <th scope="col"><?= $this->Paginator->sort('date_fin') ?></th>
-                    <th scope="col" class="actions"><?= __('Actions') ?></th>
+                    <th scope="col" class="actions" colspan="2"><?= __('Actions') ?></th>
                 </tr>
             </thead>
             <tbody>
@@ -50,7 +50,7 @@
                     <td><?= $this->Number->format($credit->periode_paiement) ?></td>
                     <td><?= h($credit->date_credit) ?></td>
                     <td><?= h($credit->date_fin) ?></td>
-                    <td class="actions">
+                    <td class="actions" colspan="2">
                         <?= $this->Html->link(__('Afficher'), ['action' => 'view', $credit->id]) ?>
                         <?= $this->Html->link(__('Modifier'), ['action' => 'edit', $credit->id]) ?>
                         <?= $this->Form->postLink(__('Supprimer'), ['action' => 'delete', $credit->id], ['confirm' => __('Are you sure you want to delete # {0}?', $credit->id)]) ?>

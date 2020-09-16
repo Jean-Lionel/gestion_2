@@ -30,9 +30,9 @@
         <li><?= $this->Html->link(__('New Cotation'), ['controller' => 'Cotations', 'action' => 'add']) ?></li>
     </ul>
 </nav> -->
-<div class="employes index large-10 medium-10 columns content">
+<div class="employes index large-12 medium-12 columns content">
     <div class="columns medium-6">
-        <h3><?= __('LISTE DES EMPLOYES PRET A PARTITR EN RETRAITE') ?></h3>
+       <!--  <h3><?= __('LISTE DES EMPLOYES PRET A PARTITR EN RETRAITE') ?></h3> -->
     </div>
     
     <div class="columns medium-4">
@@ -58,7 +58,11 @@
     </div>
     <?= $this->Form->end(); ?>
 </div>
-<table class="table table-hover table-responsive">
+
+<div class="medium-12 columns" >
+    <div class="medium-7 columns">
+
+        <table class="table table-hover table-responsive">
     <thead>
         <tr>
             <th scope="col"><?= $this->Paginator->sort('id','No') ?></th>
@@ -79,22 +83,73 @@
                     <td><?= h(strtoupper($employe['nom'])) ?></td>
                     <td><?= h(ucfirst($employe['prenom'])) ?></td>
                     <td><?= h($employe['dateNaissance']) ?></td>
-                    <td><?= h($employe['anneeRestant']) ?></td>
+                    <td>
+                        <?php 
+                        if($employe['anneeRestant'] < 2 ) {
+
+                            echo '<span style="background: red; width:200px;">'.$employe['anneeRestant'].'</span>
+';
+                        }else{
+                            echo $employe['anneeRestant'];
+                        }
+
+                            
+                            
+                        ?>
+                    </td>
                     <td><?= h($employe['nbresAnne']) ?></td>
                     
                 </td>
             </tr>
         <?php endforeach; ?>
     </tbody>
-</table>
-<!-- <div class="paginator">
-    <ul class="pagination">
-        <?= $this->Paginator->first('<< ' . __('first')) ?>
-        <?= $this->Paginator->prev('< ' . __('previous')) ?>
-        <?= $this->Paginator->numbers() ?>
-        <?= $this->Paginator->next(__('next') . ' >') ?>
-        <?= $this->Paginator->last(__('last') . ' >>') ?>
-    </ul>
-    <p><?= $this->Paginator->counter(['format' => __('Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total')]) ?></p>
-</div> -->
+    </table>
+
+
+    
+    </div>
+    <div class="medium-5 columns">
+        
+        <h5>Les candidants à la retraites</h5>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Matricule</th>
+
+                    <th>Nom et Prénom</th>
+                    <th>Années Restantes</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+      <!--           "matricule" => "29"
+    "nom" => "SINDAYIHEBURA"
+    "prenom" => "Astère"
+    "dateNaissance" => "1952-05-12"
+    "nbresAnne" => "68  ans - 03 mois  - 26 jours"
+    "anneeRestant" => -8 -->
+                
+
+                <?php foreach($employes_anne_restant as $employe): ?>
+                    <tr>
+                        <td><?= $employe['matricule'] ?></td>
+                        <td><?= $employe['nom'].' '.$employe['prenom'] ?></td>
+                        <td><?= $employe['anneeRestant'] ?></td>
+                    </tr>
+
+                <?php endforeach; ?>
+
+            </tbody>
+        </table>
+
+
+    </div>
+</div>
+
+
+
+
+
 </div>
